@@ -23,6 +23,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php the_content(); ?>
 		<?php acf_form(array(
+			'post_title' 	=> true,
 	        'post_id'       => 'new_post',
 	        'new_post'      => array(
 		        'post_type'     => 'course',
