@@ -22,18 +22,25 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 
 		<?php the_content(); ?>
-		<?php acf_form(array(
-			'post_title' 	=> true,
-	        'post_id'       => 'new_post',
-	        'new_post'      => array(
-		        'post_type'     => 'course',
-	            'post_status'   => 'publish',
-		        ),
-	        'field_groups' => array(6), // Create post field group ID(s)
-            'form' => true,
-            'return' => '%post_url%' , // Redirect to new post url         
-	        'submit_value'  => 'Create new course'
-	    )); ?>
+		<?php 
+			if(is_user_logged_in()){
+				acf_form(array(
+				'post_title' 	=> true,
+		        'post_id'       => 'new_post',
+		        'new_post'      => array(
+			        'post_type'     => 'course',
+		            'post_status'   => 'publish',
+			        ),
+		        'field_groups' => array(6,22), // Create post field group ID(s)
+	            'form' => true,
+	            'return' => '%post_url%' , // Redirect to new post url         
+		        'submit_value'  => 'Create new course'
+		    )); 
+			} else {
+				echo '<a href="'. wp_login_url( get_permalink() ).'">Please login to create new courses.</a>';
+			}
+			
+	    ?>
 
 		<?php
 		wp_link_pages(
