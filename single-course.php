@@ -28,9 +28,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<!--DATE REPEATER-->	
 					<?php if( have_rows('dates') ): ?>
 						<h2>Course Dates</h2>
+						<div class="row date-row">								
+							<div class="col-md-3">
+								<h3>Registration Start Date</h3>
+							</div>
+							<div class="col-md-3">
+								<h3>Registration End Date</h3>
+							</div>
+							<div class="col-md-3">
+								<h3>Course Start Date</h3>
+							</div>
+							<div class="col-md-3">
+								<h3>Course End Date</h3>
+							</div>
+						</div>
 	
 						<?php while( have_rows('dates') ): the_row(); 
-
 							// vars
 							$reg_start = get_sub_field('registration_start_date');
 							$reg_end = get_sub_field('registration_end_date');
@@ -40,25 +53,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 							?>
 							<div class="row">								
 								<div class="col-md-3">
-									<h3>Registration Start Date</h3>
 									<?php if( $reg_start ): ?>
 										<?php echo $reg_start; ?>
 									<?php endif; ?>
 								</div>
 								<div class="col-md-3">
-									<h3>Registration End Date</h3>
 									<?php if( $reg_end ): ?>
 										<?php echo $reg_end; ?>
 									<?php endif; ?>
 								</div>
 								<div class="col-md-3">
-									<h3>Course Start Date</h3>
 									<?php if( $course_start ): ?>
 										<?php echo $course_start; ?>
 									<?php endif; ?>
 								</div>
 								<div class="col-md-3">
-									<h3>Course End Date</h3>
 									<?php if( $course_end ): ?>
 										<?php echo $course_end; ?>
 									<?php endif; ?>
@@ -90,7 +99,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				        'post_id'       => $post_id,
 				        'post_title'    => false,
 				        'post_content'  => false,
-				        'submit_value'  => __('Update meta')
+				        'submit_value'  => __('Update Course Information'),
+				        'updated_message' => __("Course successfully updated", 'acf'),
+				        'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
 				    )); ?>
 				</div>
 			<?php endif; ?>
