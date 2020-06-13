@@ -138,7 +138,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add additional dates",
             "sub_fields": [
                 {
                     "key": "field_5ee4c65cb9480",
@@ -398,13 +398,6 @@
     "location": [
         [
             {
-                "param": "post_category",
-                "operator": "==",
-                "value": "category:uncategorized"
-            }
-        ],
-        [
-            {
                 "param": "post_type",
                 "operator": "==",
                 "value": "course"
@@ -433,5 +426,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592052139
+    "modified": 1592055649
 }
