@@ -417,7 +417,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "permalink",
         "the_content",
         "excerpt",
         "discussion",
@@ -434,5 +433,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592051485
+    "modified": 1592052139
 }

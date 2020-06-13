@@ -25,16 +25,51 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<main class="site-main" id="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
-						
-					<?php 
-					  $course_dates = get_field('course_dates'); // 'our_services' is your parent group
-					  $course_start_date = $course_dates['course_start_date'];
-					  $course_end_date = $course_dates['course_end_date'];
-					  echo '<div class="course-dates dates"><h2>Course Dates</h2>';
-					  echo '<div class="start-date date"><h3>Start</h3>' . $course_start_date . '</div>';
-					  echo '<div class="end-date date"><h3>End</h3>' . $course_end_date . '</div>';					  
-					  echo '</div>';
-					;?>
+				<!--DATE REPEATER-->	
+					<?php if( have_rows('dates') ): ?>
+						<h2>Course Dates</h2>
+	
+						<?php while( have_rows('dates') ): the_row(); 
+
+							// vars
+							$reg_start = get_sub_field('registration_start_date');
+							$reg_end = get_sub_field('registration_end_date');
+							$course_start = get_sub_field('course_start_date');
+							$course_end = get_sub_field('course_end_date');
+
+							?>
+							<div class="row">								
+								<div class="col-md-3">
+									<h3>Registration Start Date</h3>
+									<?php if( $reg_start ): ?>
+										<?php echo $reg_start; ?>
+									<?php endif; ?>
+								</div>
+								<div class="col-md-3">
+									<h3>Registration End Date</h3>
+									<?php if( $reg_end ): ?>
+										<?php echo $reg_end; ?>
+									<?php endif; ?>
+								</div>
+								<div class="col-md-3">
+									<h3>Course Start Date</h3>
+									<?php if( $course_start ): ?>
+										<?php echo $course_start; ?>
+									<?php endif; ?>
+								</div>
+								<div class="col-md-3">
+									<h3>Course End Date</h3>
+									<?php if( $course_end ): ?>
+										<?php echo $course_end; ?>
+									<?php endif; ?>
+								</div>
+							</div>
+									
+
+						<?php endwhile; ?>
+
+					<?php endif; ?>
+				<!--END DATE REPEATER-->	
                     <?php 
 						$short_course_description = get_field('short_course_description');
 						echo '<h2>Short Course Description</h2><div class="short-description">' . $short_course_description . '</div>';
