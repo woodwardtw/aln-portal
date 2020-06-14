@@ -10,6 +10,21 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Domine', serif;
 }
 
+//single course *************************
+#single-course-wrapper h2 {
+	border-bottom: 1px solid $gray;
+}
+
+.holder {
+	margin: 20px 0 40px 0;
+}
+
+//dates
+
+.date-row h3 {
+	font-size: 1em;
+}
+
 //acf 
 
 .acf-label label {
@@ -37,4 +52,16 @@ h1, h2, h3, h4, h5 {
 	margin: 10px auto;
 	display: block;
 	font-size: 1.3em;
+}
+
+//footer
+#wrapper-footer {
+	background-color: $gray;
+	padding-top: 80px;
+	margin-top: 50px;
+	color: #fff;
+}
+
+#wrapper-footer a, caption {
+	color: #fff;
 }
