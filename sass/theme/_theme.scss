@@ -20,7 +20,12 @@ h1, h2, h3, h4, h5 {
 }
 
 //dates
-.table thead th {
+
+#single-course-wrapper table {
+	margin-top: -8px;
+}
+
+#single-course-wrapper .table thead th {
 	background-color: #efefef;
 }
 
@@ -47,6 +52,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 700;
 	text-decoration: underline;
 	text-decoration-color: $orange;
+	width: 300px;
 }
 
 //acf 
