@@ -9,6 +9,15 @@
 defined( 'ABSPATH' ) || exit;
 
 
+//from https://whiteleydesigns.com/modify-post-title-post-content-labels-front-end-acf-form/
+// Modify ACF Form Label for Post Title Field
+function aln_post_title_acf_name( $field ) {
+   
+    $field['label'] = 'Course Name';
+    return $field;
+}
+add_filter('acf/load_field/name=_post_title', 'aln_post_title_acf_name');
+
 
 //ACF SAVE and LOAD JSON
 add_filter('acf/settings/save_json', 'alt_ee_json_save_point');

@@ -31,3 +31,16 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 } // End of if function_exists( 'understrap_scripts' ).
 
 add_action( 'wp_enqueue_scripts', 'understrap_scripts' );
+
+
+add_action('wp_enqueue_scripts', 'aln_load_scripts');
+ add_action( 'admin_enqueue_scripts', 'aln_load_scripts' );
+
+function aln_load_scripts() {                           
+    $deps = array('jquery');
+    $version= '1.0'; 
+    $in_footer = true;    
+    wp_enqueue_script('ubc-cis-main-js',get_template_directory_uri() . '/js/aln-main.js', $deps, $version, $in_footer); 
+}
+
+ 
