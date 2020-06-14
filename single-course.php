@@ -53,7 +53,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								$course_end = get_sub_field('course_end_date');
 
 								?>
-								<div class="row">								
+								<div class="row single-date">								
 									<div class="col-md-3">
 										<?php if( $reg_start ): ?>
 											<?php echo $reg_start; ?>
