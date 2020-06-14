@@ -170,5 +170,39 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			)
 		);
 
+		register_sidebar(
+			array(
+				'name'          => __( 'Footer left', 'understrap' ),
+				'id'            => 'footerleft',
+				'description'   => __( 'Left 1/3 sized footer widget with dynamic grid', 'understrap' ),
+				'before_widget' => '<div id="%1$s" class="footer-widget col-md-4">',
+				'after_widget'  => '</div><!-- .footer-widget -->',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => __( 'Footer Mid', 'understrap' ),
+				'id'            => 'footermid',
+				'description'   => __( 'Mid 1/3 sized footer widget with dynamic grid', 'understrap' ),
+				'before_widget' => '<div id="%1$s" class="footer-widget col-md-4">',
+				'after_widget'  => '</div><!-- .footer-widget -->',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => __( 'Footer Right', 'understrap' ),
+				'id'            => 'footerright',
+				'description'   => __( 'Right 1/3 sized footer widget with dynamic grid', 'understrap' ),
+				'before_widget' => '<div id="%1$s" class="footer-widget col-md-4">',
+				'after_widget'  => '</div><!-- .footer-widget -->',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+
 	}
 } // End of function_exists( 'understrap_widgets_init' ).
