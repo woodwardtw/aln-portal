@@ -1,1 +1,40 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Roboto:wght@300;400&display=swap');
+
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Domine', serif;
+}
+
+//acf 
+
+.acf-label label {
+	font-size: 1.1em;
+	font-family: 'Domine', serif;	
+}
+
+.acf-button {
+	padding: 5px 10px;
+	border-radius: 3px;
+	background-color: $primary;
+	color: #fff;
+}
+
+.acf-button:hover {
+	color: $orange;
+	text-decoration: none;
+}
+
+.acf-form-submit input {
+	padding: 10px 20px;
+	border-radius: 3px;
+	background-color: $primary;
+	color: #fff;
+	margin: 10px auto;
+	display: block;
+	font-size: 1.3em;
+}

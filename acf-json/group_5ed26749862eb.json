@@ -324,7 +324,7 @@
             "label": "Course Artefacts",
             "name": "course_artefacts",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Using the button to the right, add important learning artefacts to this submission.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -336,7 +336,7 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "",
+            "button_label": "Add Artefact",
             "sub_fields": [
                 {
                     "key": "field_5ed992767306b",
@@ -393,6 +393,23 @@
                     "new_lines": ""
                 }
             ]
+        },
+        {
+            "key": "field_5ee60564f6d2c",
+            "label": "Review",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "You have now completed your course submission. \r\n\r\nWhen you click on the 'Create new course' button below you'll be taken to the course page. That will give you the chance to see the submission as others will see it. This is the page where you can make updates or edit information should that be necessary.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -426,5 +443,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592055649
+    "modified": 1592133188
 }
