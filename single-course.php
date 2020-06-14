@@ -28,22 +28,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<h1><?php the_title();?></h1>
 				<!--DATE REPEATER-->	
 					<?php if( have_rows('dates') ): ?>
-						<div class="date-holder holder">
+						<div class="date-holder holder table-responsive">
 							<h2>Course Dates</h2>
-							<div class="row date-row">								
-								<div class="col-md-3">
-									<h3>Registration Start Date</h3>
-								</div>
-								<div class="col-md-3">
-									<h3>Registration End Date</h3>
-								</div>
-								<div class="col-md-3">
-									<h3>Course Start Date</h3>
-								</div>
-								<div class="col-md-3">
-									<h3>Course End Date</h3>
-								</div>
-							</div>
+							<table class="table">
+									  <thead>
+									    <tr>
+									      <th scope="col">Registration Start Date</th>
+									      <th scope="col">Registration End Date</th>
+									      <th scope="col">Course Start Date</th>
+									      <th scope="col">Course End Date</th>
+									    </tr>
+									  </thead>
+									  <tbody>
 		
 							<?php while( have_rows('dates') ): the_row(); 
 								// vars
@@ -53,31 +49,26 @@ $container = get_theme_mod( 'understrap_container_type' );
 								$course_end = get_sub_field('course_end_date');
 
 								?>
-								<div class="row single-date">								
-									<div class="col-md-3">
-										<?php if( $reg_start ): ?>
-											<?php echo $reg_start; ?>
+								
+									    <tr>
+									    <?php if( $reg_start ): ?>
+											<?php echo '<td>' . $reg_start . '</td>' ; ?>
 										<?php endif; ?>
-									</div>
-									<div class="col-md-3">
-										<?php if( $reg_end ): ?>
-											<?php echo $reg_end; ?>
+									     <?php if( $reg_end ): ?>
+											<?php echo '<td>' . $reg_end . '</td>' ; ?>
 										<?php endif; ?>
-									</div>
-									<div class="col-md-3">
 										<?php if( $course_start ): ?>
-											<?php echo $course_start; ?>
+											<?php echo '<td>' . $course_start . '</td>' ; ?>
 										<?php endif; ?>
-									</div>
-									<div class="col-md-3">
-										<?php if( $course_end ): ?>
-											<?php echo $course_end; ?>
+									    <?php if( $course_end ): ?>
+											<?php echo '<td>' . $course_end . '</td>' ; ?>
 										<?php endif; ?>
-									</div>
-								</div>
+									    </tr>									 
 										
 
 							<?php endwhile; ?>
+							 </tbody>
+							</table>
 						</div>
 						<?php endif; ?>
 				<!--END DATE REPEATER-->
