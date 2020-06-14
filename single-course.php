@@ -97,6 +97,39 @@ $container = get_theme_mod( 'understrap_container_type' );
 					;?>
 				</div>
 				<!--END LONG DESCRIPTION-->
+			<!--ARTEFACT REPEATER-->	
+					<?php if( have_rows('course_artefacts') ): ?>
+						<div class="artefact-holder holder">
+							<h2>Course Artefacts</h2>
+		
+							<?php while( have_rows('course_artefacts') ): the_row(); 
+								// vars
+								$artefact_title = get_sub_field('artefact_title');
+								$artefact_url = get_sub_field('artefact_link');
+								$artefact_desc = get_sub_field('artefact_description');
+
+								?>
+								<div class="d-flex flex-row artefact-row">								
+										<?php if( $artefact_url ): ?>
+											<?php echo '<a href="'.$artefact_url . '" class="artefact-link">';?>
+										<?php endif; ?>
+										<?php if( $artefact_title ): ?>
+											<?php echo $artefact_title;?>
+										<?php endif; ?>
+										<?php if( $artefact_url ): ?>
+											<?php echo '</a> - ';?>
+										<?php endif; ?>
+										<?php if( $artefact_desc ): ?>
+											<?php echo '<span class="artefact-desc">' . $artefact_desc . '</span>';?>
+										<?php endif; ?>
+								</div>
+										
+
+							<?php endwhile; ?>
+						</div>
+						<?php endif; ?>
+				<!--END DATE REPEATER-->
+
 			<?php if (current_user_can( 'edit_post', $post->ID )) :?>
 				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#editCourse" aria-expanded="false" aria-controls="collapseExample">
 			    	Edit/Update Your Course

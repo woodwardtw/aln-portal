@@ -35,6 +35,20 @@ h1, h2, h3, h4, h5 {
 	margin-bottom: 5px;
 }
 
+//artefact 
+.artefact-row {
+	margin: 5px 0;
+	border-bottom: 1px solid #efefef;
+	padding: 10px 0;
+}
+
+.artefact-link {
+	margin: 0 10px 0 10px;
+	font-weight: 700;
+	text-decoration: underline;
+	text-decoration-color: $orange;
+}
+
 //acf 
 
 .acf-label label {
