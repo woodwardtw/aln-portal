@@ -78,9 +78,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 										
 
 							<?php endwhile; ?>
-
+						</div>
 						<?php endif; ?>
-					</div>
 				<!--END DATE REPEATER-->
 				<!--SHORT DESCRIPTION-->
 				<div class="short-holder holder">	
