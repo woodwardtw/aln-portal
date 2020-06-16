@@ -106,6 +106,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 					;?>
 				</div>
 				<!--END COURSE OUTLINE-->
+				<!--COURSE DESIGN STATEMENT-->
+				<div class="design holder" id="design-statement">
+					<?php 
+						$course_design = get_field('course_design_statement');
+						echo '<h2>Course Design Statements</h2>';
+						if( $course_design ): ?>
+							<ul>
+							    <?php foreach( $course_design as $statement ): ?>
+							        <li><?php echo $statement; ?></li>
+							    <?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
+				
+				</div>
+				<!--END COURSE DESIGN STATEMENT-->
 			<!--ARTEFACT REPEATER-->	
 					<?php if( have_rows('course_artefacts') ): ?>
 						<div class="artefact-holder holder" id="artefacts">

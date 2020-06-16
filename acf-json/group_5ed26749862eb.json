@@ -3,125 +3,6 @@
     "title": "Course",
     "fields": [
         {
-            "key": "field_5ed98440cdf19",
-            "label": "Basic Course Information",
-            "name": "basic_course_information",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5ed9845acdf1a",
-                    "label": "Registration Fee",
-                    "name": "registration_fee",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "24",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
-                {
-                    "key": "field_5ed9848a5b4ff",
-                    "label": "Offering Number",
-                    "name": "offering_number",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "24",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5ed984a5d9b03",
-                    "label": "Learner Engagement Hours",
-                    "name": "learner_engagement_hours",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "24",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "1": "1",
-                        "2": "2",
-                        "3": "3",
-                        "4": "4",
-                        "5": "5",
-                        "6": "6",
-                        "7": "7",
-                        "8": "8",
-                        "9": "9",
-                        "10": "10",
-                        "11": "11",
-                        "12": "12",
-                        "13": "13",
-                        "14": "14",
-                        "15": "15"
-                    },
-                    "default_value": false,
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "return_format": "value",
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5ed991fd7dbe0",
-                    "label": "Course Newsletter",
-                    "name": "course_newsletter",
-                    "type": "radio",
-                    "instructions": "Course has a newsletter or mailing list.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "24",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "Yes": "Yes",
-                        "No": "No"
-                    },
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "default_value": "",
-                    "layout": "vertical",
-                    "return_format": "value",
-                    "save_other_choice": 0
-                }
-            ]
-        },
-        {
             "key": "field_5ee4c5e688b33",
             "label": "Dates",
             "name": "dates",
@@ -344,7 +225,7 @@
             "key": "field_5ed62fbc5843f",
             "label": "Course Design Statement",
             "name": "course_design_statement",
-            "type": "wysiwyg",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -353,11 +234,18 @@
                 "class": "",
                 "id": ""
             },
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "default_value": "",
-            "delay": 0
+            "choices": {
+                "Online": "Online",
+                "Face-to-Face": "Face-to-Face",
+                "Link to newsletter included": "Link to newsletter included",
+                "Included indigenous perspectives": "Included indigenous perspectives"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
         },
         {
             "key": "field_5ed992577306a",
@@ -435,6 +323,101 @@
             ]
         },
         {
+            "key": "field_5ed98440cdf19",
+            "label": "Basic Course Information",
+            "name": "basic_course_information",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5ed9845acdf1a",
+                    "label": "Registration Fee",
+                    "name": "registration_fee",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5ed9848a5b4ff",
+                    "label": "Offering Number",
+                    "name": "offering_number",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ed984a5d9b03",
+                    "label": "Learner Engagement Hours",
+                    "name": "learner_engagement_hours",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "1": "1",
+                        "2": "2",
+                        "3": "3",
+                        "4": "4",
+                        "5": "5",
+                        "6": "6",
+                        "7": "7",
+                        "8": "8",
+                        "9": "9",
+                        "10": "10",
+                        "11": "11",
+                        "12": "12",
+                        "13": "13",
+                        "14": "14",
+                        "15": "15"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
             "key": "field_5ee60564f6d2c",
             "label": "Review",
             "name": "",
@@ -483,5 +466,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592301743
+    "modified": 1592306820
 }
