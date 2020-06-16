@@ -82,10 +82,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<!--END SHORT DESCRIPTION-->
 				<!--LONG DESCRIPTION-->
 				<div class="long-holder holder" id="full-desc">
-					<?php 
-						$long_course_description = get_field('long_course_description');
-						echo '<h2>Long Course Description</h2><div class="long-description">' . $long_course_description . '</div>';
-					;?>
+					<?php if( have_rows('long_course_description') ): ?>
+						<h2>Long Course Description</h2>
+						<?php while( have_rows('long_course_description') ): the_row();
+							$module_name = get_sub_field('module_name');
+							$module_description = get_sub_field('module_description');
+						?> 
+							<div class="module">
+								<h3 class="module-description"><?php echo $module_name;?></h3>
+								<div class="long-description"><?php echo $module_description;?></div>	
+							</div>
+						<?php endwhile; ?>
+					<?php endif; ?>				
 				</div>
 				<!--END LONG DESCRIPTION-->
 				<!--COURSE OUTLINE-->

@@ -233,8 +233,8 @@
             "key": "field_5ed3a219c08d9",
             "label": "Long Course Description",
             "name": "long_course_description",
-            "type": "wysiwyg",
-            "instructions": "",
+            "type": "repeater",
+            "instructions": "Add modules below.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -242,11 +242,51 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Module",
+            "sub_fields": [
+                {
+                    "key": "field_5ee89639cfcab",
+                    "label": "Module Name",
+                    "name": "module_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ee8965bcfcac",
+                    "label": "Module Description",
+                    "name": "module_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                }
+            ]
         },
         {
             "key": "field_5ed62f532fdff",
@@ -443,5 +483,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592139082
+    "modified": 1592301743
 }
