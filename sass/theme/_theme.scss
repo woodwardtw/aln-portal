@@ -37,12 +37,31 @@ h1, h2, h3, h4, h5 {
 	padding: 70px 30px;
 }
 
-.navbar-brand {
+#main-nav {
+	background-color: #fff!important;
+	border-bottom: 2px solid $orange;
+}
+
+#main-nav .container {
+	width: 100%;
+}
+
+
+.navbar-expand-md>.container {
+	padding: 0;
+}
+
+#logo {
 	background-image: url(../imgs/logo.jpg);
 	background-position: left center;
 	background-repeat: no-repeat;
-	width: 400px;
-	height: 80px;
+	width: 100%;
+	height: 200px;
+	background-size: contain;
+}
+
+#main-menu a {
+	color: $primary;
 }
 
 //single course *************************

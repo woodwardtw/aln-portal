@@ -31,19 +31,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-light" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 			</h2>
 
-		<?php if ( 'container' === $container ) : ?>
 			<div class="container">
-		<?php endif; ?>
 					<!-- Your site title as branding in the menu -->
-					
-
-			<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><span class="aln-menu-title" alt="<?php bloginfo( 'name' ); ?>"></span></a>
+						
+				<div id="logo">
+					<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"></a>
+				</div>
+			</div>
+			<div class="container">
 
 						
 					<!-- end custom logo -->
