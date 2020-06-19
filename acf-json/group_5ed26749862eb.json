@@ -346,7 +346,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -367,7 +367,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -386,7 +386,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -414,6 +414,35 @@
                     "return_format": "value",
                     "ajax": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_5eecf51b84b35",
+                    "label": "Univiersity",
+                    "name": "univiersity",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Capilano University": "Capilano University",
+                        "Royal Roads University": "Royal Roads University",
+                        "Simon Fraser University": "Simon Fraser University",
+                        "University of British Columbia": "University of British Columbia",
+                        "University of Northern British Columbia": "University of Northern British Columbia",
+                        "University of Victoria": "University of Victoria",
+                        "Vancouver Island University": "Vancouver Island University"
+                    },
+                    "allow_custom": 0,
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value",
+                    "save_custom": 0
                 }
             ]
         },
@@ -466,5 +495,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592577553
+    "modified": 1592587638
 }
