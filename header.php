@@ -40,17 +40,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php if ( 'container' === $container ) : ?>
 			<div class="container">
 		<?php endif; ?>
-
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
 
 						<?php if ( is_front_page() && is_home() ) : ?>
-
 							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
 
 						<?php else : ?>
 
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
+							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><img class="leaf-header" src="<?php echo get_stylesheet_directory_uri() . '/imgs/';?>maple_white.svg"/><span class="aln-menu-title"><?php bloginfo( 'name' ); ?></span></a>
 
 						<?php endif; ?>
 

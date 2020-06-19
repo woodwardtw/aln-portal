@@ -10,6 +10,19 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Domine', serif;
 }
 
+.aln-menu-title {
+	font-size: 1.3em;
+	font-family: 'Domine', serif;	
+	line-height: .5;
+	vertical-align: middle;
+}
+
+.leaf-header {
+	height: 35px;
+	width: 35px;
+	margin-right: 10px;
+}
+
 //single course *************************
 #single-course-wrapper h2 {
 	border-bottom: 1px solid $gray;

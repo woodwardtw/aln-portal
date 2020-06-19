@@ -96,7 +96,7 @@
             "label": "Short Course Description",
             "name": "short_course_description",
             "type": "textarea",
-            "instructions": "Please limit your entry to <span id=\"short-desc-limit\">200<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.",
+            "instructions": "Please limit your entry to <span id=\"short-desc-limit\">500<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -466,5 +466,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592306820
+    "modified": 1592577553
 }
