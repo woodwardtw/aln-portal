@@ -1,18 +1,22 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Roboto:wght@300;400&display=swap');
+
+//from https://www.onlinewebfonts.com/download/30c7b0ba24b3056fd3b4d95abf785da0
+@import url(//db.onlinewebfonts.com/c/30c7b0ba24b3056fd3b4d95abf785da0?family=Maax);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 
 * {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Domine', serif;
+	font-family: 'Maax', serif;
 }
 
 .aln-menu-title {
 	font-size: 1.3em;
-	font-family: 'Domine', serif;	
+	font-family: 'Maax', serif;	
 	line-height: .5;
 	vertical-align: middle;
 }
@@ -31,6 +35,14 @@ h1, h2, h3, h4, h5 {
 #content {
 	background-color: #fff;
 	padding: 70px 30px;
+}
+
+.navbar-brand {
+	background-image: url(../imgs/logo.jpg);
+	background-position: left center;
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 80px;
 }
 
 //single course *************************
@@ -96,7 +108,7 @@ h1, h2, h3, h4, h5 {
 
 .acf-label label {
 	font-size: 1.1em;
-	font-family: 'Domine', serif;	
+	font-family: 'Maax', serif;	
 }
 
 .acf-button {

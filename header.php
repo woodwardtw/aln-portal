@@ -18,7 +18,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="shortcut icon" type="image/svg" href="<?php echo get_stylesheet_directory_uri() . '/imgs/';?>maple.svg"/>
+	<link rel="shortcut icon" type="image/jpg" href="<?php echo get_stylesheet_directory_uri() . '/imgs/';?>symbol.jpg"/>
 	<?php wp_head(); ?>
 </head>
 
@@ -41,22 +41,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="container">
 		<?php endif; ?>
 					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
+					
 
-						<?php if ( is_front_page() && is_home() ) : ?>
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+			<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><span class="aln-menu-title" alt="<?php bloginfo( 'name' ); ?>"></span></a>
 
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><img class="leaf-header" src="<?php echo get_stylesheet_directory_uri() . '/imgs/';?>maple_white.svg"/><span class="aln-menu-title"><?php bloginfo( 'name' ); ?></span></a>
-
-						<?php endif; ?>
-
-						<?php
-					} else {
-						the_custom_logo();
-					}
-					?>
+						
 					<!-- end custom logo -->
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
