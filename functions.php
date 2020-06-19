@@ -30,3 +30,25 @@ $understrap_includes = array(
 foreach ( $understrap_includes as $file ) {
 	require_once get_template_directory() . '/inc' . $file;
 }
+
+
+function aln_show_courses(){
+  $html = "";
+  $args = array(
+      'posts_per_page' => 18,
+      'post_type'   => 'course', 
+      'post_status' => 'publish', 
+      'nopaging' => false,
+                    );
+    $i = 0;
+    $the_query = new WP_Query( $args );
+        if( $the_query->have_posts() ): 
+          while ( $the_query->have_posts() ) : $the_query->the_post();
+                   echo '<div class="col-md-12"><h2>' . get_the_title() . '</h2></div>';   
+           endwhile;
+      endif;
+    wp_reset_query();  // Restore global post data stomped by the_post().
+   //return '<div class="row topic-wrapper">' . $html . '</div>';
+}
+
+add_shortcode( 'show-courses', 'aln_show_courses' );
