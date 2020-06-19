@@ -131,3 +131,11 @@ h1, h2, h3, h4, h5 {
 #wrapper-footer a, caption {
 	color: #fff;
 }
+
+@media all and (max-width: 768px) { 
+	.aln-menu-title {
+		font-size: .9em;
+	}
+ } 
+
+
