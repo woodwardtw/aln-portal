@@ -133,7 +133,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "faculty"
+                "value": "instructor"
             }
         ]
     ],
@@ -145,5 +145,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1592581645
+    "modified": 1592585698
 }
