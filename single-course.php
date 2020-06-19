@@ -114,7 +114,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						if( $course_design ): ?>
 							<ul>
 							    <?php foreach( $course_design as $statement ): ?>
-							        <li><?php echo $statement; ?></li>
+							        <li>✓ <?php echo $statement; ?></li>
 							    <?php endforeach; ?>
 							</ul>
 						<?php endif; ?>
