@@ -30,20 +30,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div id="wrapper-navbar">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
-
-		<nav id="main-nav" class="navbar navbar-light" aria-labelledby="main-nav-label">
+		<div class="container">
+					<!-- Your site title as branding in the menu -->						
+				<div id="logo">
+					<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"></a>
+				</div>
+			</div>
+		<nav id="main-nav" class="navbar navbar-expand-md navbar-light" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 			</h2>
 
-			<div class="container">
-					<!-- Your site title as branding in the menu -->
-						
-				<div id="logo">
-					<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"></a>
-				</div>
-			</div>
+			
 			<div class="container">
 
 						

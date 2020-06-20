@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5 {
 	padding: 70px 30px;
 }
 
+#wrapper-navbar {
+	background-color: #fff;
+}
+
 #main-nav {
 	background-color: #fff!important;
 	border-bottom: 2px solid $orange;
@@ -154,7 +158,7 @@ h1, h2, h3, h4, h5 {
 
 //footer
 #wrapper-footer {
-	background-color: $gray;
+	background-color: $blue;
 	padding-top: 80px;
 	margin-top: 50px;
 	color: #fff;
