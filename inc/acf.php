@@ -182,3 +182,42 @@ function create_instructor_cpt() {
   $wp_rewrite->flush_rules();
 }
 add_action( 'init', 'create_instructor_cpt', 0 );
+
+
+
+add_action( 'init', 'create_university_taxonomies', 0 );
+function create_university_taxonomies()
+{
+  // Add new taxonomy
+  $labels = array(
+    'name' => _x( 'University', 'taxonomy general name' ),
+    'singular_name' => _x( 'University', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Universities' ),
+    'popular_items' => __( 'Popular Universities' ),
+    'all_items' => __( 'All Universities' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit University' ),
+    'update_item' => __( 'Update University' ),
+    'add_new_item' => __( 'Add New University' ),
+    'new_item_name' => __( 'New University' ),
+    'add_or_remove_items' => __( 'Add or remove Universities' ),
+    'choose_from_most_used' => __( 'Choose from the most used Universities' ),
+    'menu_name' => __( 'University' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('Universities',array('post','course','instructor'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'university' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'university',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => false,    
+  ));
+}
+
