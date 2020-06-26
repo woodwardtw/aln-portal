@@ -208,16 +208,17 @@ function create_university_taxonomies()
 
 //registers taxonomy specific post types - default is just post
   register_taxonomy('Universities',array('post','course','instructor'), array(
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
+    'hierarchical'          => true,
+    'labels'                => $labels,
+    'show_ui'               => true,
     'update_count_callback' => '_update_post_term_count',
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'university' ),
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'university' ),
     'show_in_rest'          => true,
     'rest_base'             => 'university',
     'rest_controller_class' => 'WP_REST_Terms_Controller',
-    'show_in_nav_menus' => false,    
+    'show_in_nav_menus'     => false, 
+    'meta_box_cb'           => false,   
   ));
 }
 
