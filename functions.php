@@ -52,3 +52,68 @@ function aln_show_courses(){
 }
 
 add_shortcode( 'show-courses', 'aln_show_courses' );
+
+
+//create user type ALN AUTHOR
+function aln_update_custom_roles() {
+    if ( get_option( 'custom_roles_version' ) < 1 ) {
+        add_role( 'aln_author', 'ALN Author', get_role( 'author' )->capabilities  );
+        update_option( 'custom_roles_version', 1 );
+    }
+}
+add_action( 'init', 'aln_update_custom_roles' );
+
+function aln_get_current_user_roles() {
+ if( is_user_logged_in() ) {
+   $user = wp_get_current_user();
+   $roles = ( array ) $user->roles;
+   return $roles; // This returns an array
+   // Use this to return a single value
+   // return $roles[0];
+ } else {
+ return array();
+ }
+}
+
+
+
+
+//restrict posts to  author level to only the posts they wrote
+function aln_posts_for_current_author($query) {
+    global $pagenow;
+ 
+    if( 'edit.php' != $pagenow || !$query->is_admin )
+        return $query;
+ 
+    if( !current_user_can( 'manage_options' ) ) {
+        global $user_ID;
+        $query->set('author', $user_ID );
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'aln_posts_for_current_author');
+
+
+add_action('after_setup_theme', 'aln_remove_admin_bar');
+ 
+function aln_remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+		  show_admin_bar(false);
+		}
+	}
+
+
+//redirect aln authors
+function aln_login_redirect( $redirect_to, $request, $user ) {
+    //is there a user to check?
+    global $user;
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+
+        if ( in_array( 'aln_author', $user->roles ) ) {
+        	 return home_url();
+        } else {
+        	return admin_url();
+        }
+    }
+}
+add_filter( 'login_redirect', 'aln_login_redirect', 10, 3 );
