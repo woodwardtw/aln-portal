@@ -446,23 +446,6 @@
             ]
         },
         {
-            "key": "field_5ee60564f6d2c",
-            "label": "Review",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "You have now completed your course submission. \r\n\r\nWhen you click on the 'Create new course' button below you'll be taken to the course page. That will give you the chance to see the submission as others will see it. This is the page where you can make updates or edit information should that be necessary.",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
             "key": "field_5ef7476b3393d",
             "label": "Allowed Editors",
             "name": "allowed_editors",
@@ -481,6 +464,23 @@
             "allow_null": 0,
             "multiple": 1,
             "return_format": "id"
+        },
+        {
+            "key": "field_5ee60564f6d2c",
+            "label": "Review",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "You have now completed your course submission. \r\n\r\nWhen you click on the 'Create new course' button below you'll be taken to the course page. That will give you the chance to see the submission as others will see it. This is the page where you can make updates or edit information should that be necessary.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -514,5 +514,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593264578
+    "modified": 1593265119
 }
