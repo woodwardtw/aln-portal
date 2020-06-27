@@ -18,6 +18,14 @@ function aln_post_title_acf_name( $field ) {
 }
 add_filter('acf/load_field/name=_post_title', 'aln_post_title_acf_name');
 
+function aln_registration_fee (){
+    if( get_field('basic_course_information')["registration_fee"]){
+        return '$' . get_field('basic_course_information')["registration_fee"];
+    } else {
+        return 'No fee indicated.';
+    }
+}
+
 
 //ACF SAVE and LOAD JSON
 add_filter('acf/settings/save_json', 'alt_ee_json_save_point');

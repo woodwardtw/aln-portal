@@ -31,7 +31,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="row">
 					<div class="col-md-6">
 						<h2>Registration Fee</h2>
-						<div class="fee">$<?php echo get_field('basic_course_information')["registration_fee"];?></div>
+						<div class="fee"><?php echo aln_registration_fee();?></div>
 					</div>
 					<div class="col-md-6">
 						<h2>Learner Engagement</h2>
