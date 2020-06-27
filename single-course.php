@@ -107,7 +107,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							$module_description = get_sub_field('module_description');
 						?> 
 							<div class="module">
-								<h3 class="module-description" id="module-<?php echo get_row_index();?>"><?php echo get_row_index() . ' - ' . $module_name;?></h3>
+								<h3 class="module-description" id="module-<?php echo get_row_index();?>"><?php echo $module_name;?></h3>
 								<div class="long-description"><?php echo $module_description;?></div>	
 							</div>
 						<?php endwhile; ?>
