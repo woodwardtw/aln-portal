@@ -192,9 +192,22 @@ h1, h2, h3, h4, h5 {
 }
 
 //buttons
-.btn {
+.btn, .acf-button, .acf-form-submit input {
 	border-radius: 30px;
 	padding: 12px 25px;
+	border-style: none;
+}
+
+.acf-button {
+	margin: 10px 0;
+	display: inline-block;
+}
+
+//sidebar or widgets
+
+.widget-area input {
+	height: 50px;
+	margin-bottom: 20px;
 }
 
 //footer
