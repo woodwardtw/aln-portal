@@ -27,6 +27,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="uni"><?php echo get_field('basic_course_information')['university'][0]->name;?></div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<h2>Registration Fee</h2>
+						<div class="fee">$<?php echo get_field('basic_course_information')["registration_fee"];?></div>
+					</div>
+					<div class="col-md-6">
+						<h2>Learner Engagement</h2>
+						<div class="hours"><?php echo get_field('basic_course_information')["learner_engagement_hours"];?> hours</div>
+					</div>
+				</div>
+
 				<!--DATE REPEATER-->	
 					<?php if( have_rows('dates') ): ?>
 						<div class="date-holder holder table-responsive" id="dates">
@@ -95,7 +107,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							$module_description = get_sub_field('module_description');
 						?> 
 							<div class="module">
-								<h3 class="module-description"><?php echo $module_name;?></h3>
+								<h3 class="module-description" id="module-<?php echo get_row_index();?>"><?php echo get_row_index() . ' - ' . $module_name;?></h3>
 								<div class="long-description"><?php echo $module_description;?></div>	
 							</div>
 						<?php endwhile; ?>
