@@ -26,6 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
+					<div class="uni"><?php echo get_field('basic_course_information')['university'][0]->name;?></div>
 				<!--DATE REPEATER-->	
 					<?php if( have_rows('dates') ): ?>
 						<div class="date-holder holder table-responsive" id="dates">
@@ -33,6 +34,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<table class="table">
 									  <thead>
 									    <tr>
+									      <th scope="col">Offering Number</th>
 									      <th scope="col">Registration Start Date</th>
 									      <th scope="col">Registration End Date</th>
 									      <th scope="col">Course Start Date</th>
@@ -47,10 +49,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 								$reg_end = get_sub_field('registration_end_date');
 								$course_start = get_sub_field('course_start_date');
 								$course_end = get_sub_field('course_end_date');
-
+								$offering_number = get_sub_field('offering_number');
 								?>
 								
 									    <tr>
+									    <?php if( $course_end ): ?>
+											<?php echo '<td>' . $offering_number . '</td>' ; ?>
+										<?php endif; ?>
 									    <?php if( $reg_start ): ?>
 											<?php echo '<td>' . $reg_start . '</td>' ; ?>
 										<?php endif; ?>
@@ -63,6 +68,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									    <?php if( $course_end ): ?>
 											<?php echo '<td>' . $course_end . '</td>' ; ?>
 										<?php endif; ?>
+										
 									    </tr>									 
 										
 
@@ -83,7 +89,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<!--LONG DESCRIPTION-->
 				<div class="long-holder holder" id="full-desc">
 					<?php if( have_rows('long_course_description') ): ?>
-						<h2>Long Course Description</h2>
+						<h2>Course Modules</h2>
 						<?php while( have_rows('long_course_description') ): the_row();
 							$module_name = get_sub_field('module_name');
 							$module_description = get_sub_field('module_description');

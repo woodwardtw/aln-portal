@@ -92,6 +92,16 @@ h1, h2, h3, h4, h5 {
 	margin: 20px 0 40px 0;
 }
 
+.uni {
+	background-color: $blue;
+	color: #fff;
+	font-size: 1.1em;
+	padding: 5px 25px 5px 10px;
+	display: inline-block;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
 //dates
 
 .date-holder {
