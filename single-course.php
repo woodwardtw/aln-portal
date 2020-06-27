@@ -171,8 +171,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 						<?php endif; ?>
 				<!--END DATE REPEATER-->
+			<?php 
+				if(get_field('allowed_editors')){
+					$allowed_editors = get_field('allowed_editors');				
 
-			<?php if (current_user_can( 'edit_post', $post->ID )) :?>
+				} else {
+					$allowed_editors = [];
+				}
+				if (current_user_can( 'edit_post', $post->ID ) || in_array(get_current_user_id(), $allowed_editors)) 
+					:?>
 				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#editCourse" aria-expanded="false" aria-controls="collapseExample">
 			    	Edit/Update Your Course
 			  	</button>

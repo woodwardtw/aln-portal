@@ -461,6 +461,26 @@
             "message": "You have now completed your course submission. \r\n\r\nWhen you click on the 'Create new course' button below you'll be taken to the course page. That will give you the chance to see the submission as others will see it. This is the page where you can make updates or edit information should that be necessary.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_5ef7476b3393d",
+            "label": "Allowed Editors",
+            "name": "allowed_editors",
+            "type": "user",
+            "instructions": "If you'd like to give other ALN authors the ability to edit this post please select them below. You can choose as many additional editors as you'd like.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [
+                "aln_author"
+            ],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id"
         }
     ],
     "location": [
@@ -494,5 +514,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593263095
+    "modified": 1593264578
 }
