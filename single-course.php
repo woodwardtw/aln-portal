@@ -170,7 +170,28 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<?php endwhile; ?>
 						</div>
 						<?php endif; ?>
-				<!--END DATE REPEATER-->
+				<!--END ARTEFACT REPEATER-->
+				<!--COURSE INSTRUCTOR-->
+				<div class="instructor holder" id="instructor">
+					<?php 
+						$instructor_name = get_field('instructor')['instructor_name'];
+						$instructor_title = get_field('instructor')['instructor_title'];
+						$instructor_image = get_field('instructor')['instructor_image'];
+						$instructor_bio = get_field('instructor')['instructor_biography'];	
+
+						echo '<h2>Instructor</h2><div class="row">';
+						echo '<div class="col-md-4">';
+						echo '<img src="' . $instructor_image["sizes"]["thumbnail"] . '" class="img-fluid instructor-bio-img" alt="Biography picture for ' . $instructor_name . '" >';
+					
+						echo '</div>';
+						echo '<div class="col-md-8">'; 
+						echo '<h3>' . $instructor_name . '</h3>';
+						echo '<div class="instructor-title">' . $instructor_title . '</div>';
+						echo $instructor_bio . '</div>';
+						echo '</div>';
+					;?>
+				</div>
+				<!--END INSTRUCTOR-->
 			<?php 
 				if(get_field('allowed_editors')){
 					$allowed_editors = get_field('allowed_editors');				

@@ -447,10 +447,10 @@
         },
         {
             "key": "field_5ef882e14e944",
-            "label": "Instructors",
-            "name": "instructors",
-            "type": "relationship",
-            "instructions": "Select the instructor(s) teaching this course.",
+            "label": "Instructor",
+            "name": "instructor",
+            "type": "group",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -458,20 +458,90 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "instructor"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "elements": [
-                "featured_image"
-            ],
-            "min": "",
-            "max": "",
-            "return_format": "object"
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5ef8d71a3da61",
+                    "label": "Instructor Name",
+                    "name": "instructor_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ef8d7303da62",
+                    "label": "Instructor Title",
+                    "name": "instructor_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ef8d7413da63",
+                    "label": "Instructor Biography",
+                    "name": "instructor_biography",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5ef8d7593da64",
+                    "label": "Instructor Image",
+                    "name": "instructor_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "uploadedTo",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
         },
         {
             "key": "field_5ef7476b3393d",
@@ -542,5 +612,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593344811
+    "modified": 1593366468
 }
