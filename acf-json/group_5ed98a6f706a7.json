@@ -75,9 +75,9 @@
             "taxonomy": "Universities",
             "field_type": "checkbox",
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
             "multiple": 0,
             "allow_null": 0
         },
@@ -128,9 +128,9 @@
     "location": [
         [
             {
-                "param": "user_form",
+                "param": "post_type",
                 "operator": "==",
-                "value": "all"
+                "value": "instructor"
             }
         ]
     ],
@@ -139,8 +139,23 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1593263901
+    "modified": 1593344857
 }

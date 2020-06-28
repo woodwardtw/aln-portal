@@ -446,6 +446,34 @@
             ]
         },
         {
+            "key": "field_5ef882e14e944",
+            "label": "Instructors",
+            "name": "instructors",
+            "type": "relationship",
+            "instructions": "Select the instructor(s) teaching this course.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "instructor"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
             "key": "field_5ef7476b3393d",
             "label": "Allowed Editors",
             "name": "allowed_editors",
@@ -514,5 +542,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593265119
+    "modified": 1593344811
 }
