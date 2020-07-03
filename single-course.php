@@ -39,9 +39,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 				</div>
 
-				<!--DATE REPEATER-->	
-					<?php if( have_rows('dates') ): ?>
-						<div class="date-holder holder table-responsive" id="dates">
+				<!--DATE REPEATER-->
+				<div class="date-holder holder table-responsive" id="dates">
 							<h2>Course Dates</h2>
 							<table class="table">
 									  <thead>
@@ -54,7 +53,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 									    </tr>
 									  </thead>
 									  <tbody>
-		
+			
+					<?php if( have_rows('dates') ): ?>
+						
 							<?php while( have_rows('dates') ): the_row(); 
 								// vars
 								$reg_start = get_sub_field('registration_start_date');
@@ -85,10 +86,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 										
 
 							<?php endwhile; ?>
-							 </tbody>
+							
+						<?php endif; ?>
+						 		</tbody>
 							</table>
 						</div>
-						<?php endif; ?>
 				<!--END DATE REPEATER-->
 				<!--SHORT DESCRIPTION-->
 				<div class="short-holder holder" id="short-desc">	
