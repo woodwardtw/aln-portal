@@ -20,7 +20,8 @@ add_filter('acf/load_field/name=_post_title', 'aln_post_title_acf_name');
 
 function aln_registration_fee (){
     if( get_field('basic_course_information')["registration_fee"]){
-        return '$' . get_field('basic_course_information')["registration_fee"];
+        $cost = get_field('basic_course_information')["registration_fee"];
+        return '$' . number_format($cost, 2) . ' +GST' ;
     } else {
         return 'No fee indicated.';
     }

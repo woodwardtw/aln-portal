@@ -44,7 +44,7 @@
                     "label": "Registration Fee",
                     "name": "registration_fee",
                     "type": "number",
-                    "instructions": "",
+                    "instructions": "Enter the registration fee not including GST",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -53,7 +53,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
+                    "placeholder": "100.00",
                     "prepend": "",
                     "append": "",
                     "min": "",
@@ -631,5 +631,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593774755
+    "modified": 1593777512
 }
