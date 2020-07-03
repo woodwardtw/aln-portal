@@ -5,9 +5,16 @@ acf.add_action('ready', function( $el ){
     var usedDisplay = document.getElementById('short-desc-limit-used'); //place to show used
     var countWords = (document.getElementById('acf-field_5ed26754e352d').value) ? document.getElementById('acf-field_5ed26754e352d').value.match(/\S+/g).length : 0;
     var wordsUsed = (countWords > 0) ? countWords:0;
-     
+
+    var wordBar = document.getElementById('short-desc-bar')
+
+
     usedDisplay.innerHTML = wordsUsed; 
+    
+    wordBar.style.width = (parseInt(wordsUsed)/500)*100+'%';
+    wordBar.setAttribute('aria-valuenow', (parseInt(wordsUsed)/500)*100+'%')
 	}
+
   jQuery("#acf-field_5ed26754e352d").on('keyup', function() {
 
     console.log('chh chh changes')
@@ -22,6 +29,8 @@ acf.add_action('ready', function( $el ){
     else {
       usedDisplay.innerHTML = words;
       //jQuery('#word_left').text(limit-words);
+       wordBar.style.width = (parseInt(words)/500)*100+'%';
+       wordBar.setAttribute('aria-valuenow', (parseInt(words)/500)*100+'%')
     }
   });
   if (document.getElementById('layout')){
