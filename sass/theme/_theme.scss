@@ -250,6 +250,24 @@ h1, h2, h3, h4, h5 {
 	color: #fff;
 }
 
+//image uploader haxxx
+
+.attachments-browser .media-toolbar, .media-sidebar{
+	display: none !important;
+}
+
+
+.media-toolbar-primary {
+	width: 100%;
+}
+
+.media-button-select.button.button-large {
+	width: 100%;
+	font-size: 2em;
+	z-index: 100;
+}
+
+
 @media all and (max-width: 768px) { 
 	.aln-menu-title {
 		font-size: .9em;
