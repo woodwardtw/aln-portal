@@ -454,7 +454,7 @@
             "label": "Course Artefacts",
             "name": "course_artefacts",
             "type": "repeater",
-            "instructions": "Using the button to the right, add important learning artefacts to this submission.",
+            "instructions": "Using the button to the right, add important learning artefacts to this submission. If you created a trailer for your course, made any creative commons media, etc.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -593,5 +593,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593793153
+    "modified": 1593793536
 }

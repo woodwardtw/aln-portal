@@ -187,21 +187,34 @@ add_action('wp_ajax_nopriv_query-attachments','aln_restrict_non_admins',1);
 
 
 
-//media library avoider
-function wpse167143_admin_footer() {
-?>
-<script>
-jQuery( document ).ready(function() {
-    typeof wp.Uploader !== 'undefined' && wp.Uploader.queue.on( 'reset', function () {
-        // From the primary toolbar (".media-toolbar-primary")
-        // get the insert button view (".media-button-insert")
-        // and execute its click (as specified in its options).
-        console.log('image uploaded thing')
-        wp.media.frame.toolbar.get('primary').get('select').options.click();
-    } );
-});
-</script>
-<?php
+
+//send email on form submission
+
+add_action('acf/save_post', 'aln_course_email');
+
+function aln_course_email( $post_id ) {  
+  
+  // bail early if editing in admin
+  if( is_admin() ) {
+    return;
+  }
+  
+  // vars
+  $post = get_post( $post_id );
+  
+  
+  // get custom fields (field group exists for content_form)
+
+  $author_id = get_post_field( 'post_author', $post_id );
+  $email = get_the_author_meta('email', $author_id);
+  // email data
+  $to = $email;
+  $headers = 'From: Adaption Learning Network <climateaction@royalroads.ca>' . "\r\n";
+  $subject = 'A link to your recent course creation - ' . $post->post_title;
+  $body = get_post_permalink($post_id);
+  
+  
+  // send email
+  wp_mail($to, $subject, $body, $headers );
+  
 }
-add_action('wp_ajax_query-attachments','wpse167143_admin_footer',1);
-add_action('wp_ajax_nopriv_query-attachments','wpse167143_admin_footer',1);
