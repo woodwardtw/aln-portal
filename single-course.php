@@ -143,12 +143,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="instructor holder" id="instructor">
 					<?php 
 						$instructor_name = get_field('instructor')['instructor_name'];
-						$instructor_image = get_field('instructor')['instructor_image'];
+						if(get_field('instructor')['instructor_image']){
+							$instructor_image = get_field('instructor')['instructor_image']['sizes']['thumbnail'];
+						}
+						else {
+							$instructor_image = get_template_directory_uri() . '/imgs/symbol.jpg' ;
+						}
 						$instructor_bio = get_field('instructor')['instructor_biography'];	
 
 						echo '<h2>Instructor</h2><div class="row">';
 						echo '<div class="col-md-4">';
-						echo '<img src="' . $instructor_image["sizes"]["thumbnail"] . '" class="img-fluid instructor-bio-img" alt="Biography picture for ' . $instructor_name . '" >';
+						echo '<img src="' . $instructor_image . '" class="img-fluid instructor-bio-img" alt="Biography picture for ' . $instructor_name . '" >';
 					
 						echo '</div>';
 						echo '<div class="col-md-8">'; 
