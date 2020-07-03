@@ -117,7 +117,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "Add additional dates",
+            "button_label": "Add course offering dates",
             "sub_fields": [
                 {
                     "key": "field_5ee4c65cb9480",
@@ -134,7 +134,7 @@
                     },
                     "display_format": "d\/m\/Y",
                     "return_format": "d\/m\/Y",
-                    "first_day": 1
+                    "first_day": 0
                 },
                 {
                     "key": "field_5ee4c67ab9481",
@@ -151,7 +151,7 @@
                     },
                     "display_format": "d\/m\/Y",
                     "return_format": "d\/m\/Y",
-                    "first_day": 1
+                    "first_day": 0
                 },
                 {
                     "key": "field_5ee4c691b9482",
@@ -168,7 +168,7 @@
                     },
                     "display_format": "d\/m\/Y",
                     "return_format": "d\/m\/Y",
-                    "first_day": 1
+                    "first_day": 0
                 },
                 {
                     "key": "field_5ee4c6acb9484",
@@ -185,7 +185,7 @@
                     },
                     "display_format": "d\/m\/Y",
                     "return_format": "d\/m\/Y",
-                    "first_day": 1
+                    "first_day": 0
                 },
                 {
                     "key": "field_5ef5cdbb5efbb",
@@ -540,6 +540,25 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5eff128f2485c",
+                    "label": "",
+                    "name": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
                 }
             ]
         },
@@ -612,5 +631,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593379241
+    "modified": 1593774755
 }

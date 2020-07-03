@@ -143,7 +143,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="instructor holder" id="instructor">
 					<?php 
 						$instructor_name = get_field('instructor')['instructor_name'];
-						$instructor_title = get_field('instructor')['instructor_title'];
 						$instructor_image = get_field('instructor')['instructor_image'];
 						$instructor_bio = get_field('instructor')['instructor_biography'];	
 
@@ -154,7 +153,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						echo '</div>';
 						echo '<div class="col-md-8">'; 
 						echo '<h3>' . $instructor_name . '</h3>';
-						echo '<div class="instructor-title">' . $instructor_title . '</div>';
 						echo $instructor_bio . '</div>';
 						echo '</div>';
 					;?>

@@ -1,12 +1,12 @@
 //from https://stackoverflow.com/questions/17909646/counting-and-limiting-words-in-a-textarea
-jQuery(document).ready(function() {
+acf.add_action('ready', function( $el ){
 	if(document.getElementById('short-desc-limit')){
 		var limit = parseInt(document.getElementById('short-desc-limit').innerHTML);//get limit number
     var usedDisplay = document.getElementById('short-desc-limit-used'); //place to show used
-      if(document.getElementById('acf-field_5ed26754e352d').value.match(/\S+/g).length > 0){
-          let used = document.getElementById('acf-field_5ed26754e352d').value.match(/\S+/g).length; //count length on load
-          usedDisplay.innerHTML = used;
-      }  
+    var countWords = (document.getElementById('acf-field_5ed26754e352d').value) ? document.getElementById('acf-field_5ed26754e352d').value.match(/\S+/g).length : 0;
+    var wordsUsed = (countWords > 0) ? countWords:0;
+     
+    usedDisplay.innerHTML = wordsUsed; 
 	}
   jQuery("#acf-field_5ed26754e352d").on('keyup', function() {
 

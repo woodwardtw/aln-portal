@@ -161,3 +161,47 @@ function aln_list_courses($atts){
 }
 
 add_shortcode( 'list-courses', 'aln_list_courses' );
+
+
+//stop media library stuff
+
+// Conditionally don't load the Media Library tab/ content
+function aln_remove_medialibrary_tab($strings) {
+  if ( !current_user_can('administrator')  ) {
+    unset($strings["mediaLibraryTitle"]);
+    return $strings;
+  } else {
+    return $strings;
+  }
+}
+add_filter('media_view_strings','aln_remove_medialibrary_tab');
+
+// Conditionally don't run the Media Library's initializing AJAX
+function aln_restrict_non_admins(){
+  if( !current_user_can('administrator') ){
+    exit;
+  }
+}
+add_action('wp_ajax_query-attachments','aln_restrict_non_admins',1);
+add_action('wp_ajax_nopriv_query-attachments','aln_restrict_non_admins',1);
+
+
+
+//media library avoider
+function wpse167143_admin_footer() {
+?>
+<script>
+jQuery( document ).ready(function() {
+    typeof wp.Uploader !== 'undefined' && wp.Uploader.queue.on( 'reset', function () {
+        // From the primary toolbar (".media-toolbar-primary")
+        // get the insert button view (".media-button-insert")
+        // and execute its click (as specified in its options).
+        console.log('image uploaded thing')
+        wp.media.frame.toolbar.get('primary').get('select').options.click();
+    } );
+});
+</script>
+<?php
+}
+add_action('wp_ajax_query-attachments','wpse167143_admin_footer',1);
+add_action('wp_ajax_nopriv_query-attachments','wpse167143_admin_footer',1);
