@@ -211,7 +211,7 @@ function aln_course_email( $post_id ) {
   $to = $email;
   $headers = 'From: Adaption Learning Network Portal <climateaction@royalroads.ca>' . "\r\n";
   $subject = 'A link to your recent course creation - ' . $post->post_title;
-  $body = 'You can always return directly to this link to add to or update this course information. If you lose this email, just return to the ALN Portal site and find your course in the "All Courses" page. 'get_post_permalink($post_id);
+  $body = 'You can always return directly to this link to add to or update this course information. If you lose this email, just return to the ALN Portal site and find your course in the "All Courses" page. ' . get_post_permalink($post_id);
   
   
   // send email
