@@ -27,6 +27,48 @@ function aln_registration_fee (){
     }
 }
 
+function aln_university(){
+    if (get_field('basic_course_information')['university']){
+        return get_field('basic_course_information')['university'][0]->name;
+    } else {
+        return 'No university given.';
+    }
+}
+
+function aln_engagement_hours(){
+    if(get_field('basic_course_information')["learner_engagement_hours"] != null || get_field('basic_course_information')["learner_engagement_hours"] != ''){
+        return get_field('basic_course_information')["learner_engagement_hours"] . ' hours';
+    } else {
+        return 'No hours indicated.';
+    }
+}
+
+
+function aln_short_course_description(){
+    $description = get_field('short_course_description');
+    if ($description){
+        return $description;
+    } else {
+        return 'No description given.';
+    }
+}
+
+function aln_course_outline(){
+    if(get_field('course_outline')['course_outline']){
+        return $course_outline = get_field('course_outline')['course_outline'];     
+    } else {
+        return "No course outline given.";
+    }
+}
+
+function aln_course_outline_link(){
+     $course_link = get_field('course_outline')['full_course_outline_link'];  
+     if($course_link){
+        return '<a href="' . $course_link . '" class="btn btn-primary">See the full outline</a>';
+     } else {
+        return 'No link given.';
+     }
+}
 
 //ACF SAVE and LOAD JSON
 add_filter('acf/settings/save_json', 'alt_ee_json_save_point');

@@ -205,7 +205,7 @@ function aln_course_email( $post_id ) {
   
   // get custom fields (field group exists for content_form)
 
-  $author_id = get_post_field( 'post_author', $post_id );
+  $author_id = $post->post_author;
   $email = get_the_author_meta('email', $author_id);
   // email data
   $to = $email;

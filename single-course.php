@@ -26,7 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
-					<div class="uni"><?php echo get_field('basic_course_information')['university'][0]->name;?></div>
+					<div class="uni"><?php echo aln_university();?></div>
 				
 				<div class="row">
 					<div class="col-md-6">
@@ -35,7 +35,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 					<div class="col-md-6">
 						<h2>Learner Engagement</h2>
-						<div class="hours"><?php echo get_field('basic_course_information')["learner_engagement_hours"];?> hours</div>
+						<div class="hours"><?php echo aln_engagement_hours();?></div>
 					</div>
 				</div>
 
@@ -86,6 +86,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 										
 
 							<?php endwhile; ?>
+							<?php else: ?>
+							<p>You have not indicated any dates. Dates are key to marketing your course.</p>
 							
 						<?php endif; ?>
 						 		</tbody>
@@ -94,16 +96,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<!--END DATE REPEATER-->
 				<!--SHORT DESCRIPTION-->
 				<div class="short-holder holder" id="short-desc">	
-                    <?php 
-						$short_course_description = get_field('short_course_description');
-						echo '<h2>Short Course Description</h2><div class="short-description">' . $short_course_description . '</div>';
-					;?>
+                  <h2>Short Course Description</h2>
+                  <div class="short-description">
+                  	<?php echo aln_short_course_description();?>
+                  </div>
 				</div>
 				<!--END SHORT DESCRIPTION-->
 				<!--LONG DESCRIPTION-->
 				<div class="long-holder holder" id="full-desc">
+					<h2>Course Modules</h2>
 					<?php if( have_rows('long_course_description') ): ?>
-						<h2>Course Modules</h2>
 						<?php while( have_rows('long_course_description') ): the_row();
 							$module_name = get_sub_field('module_name');
 							$module_description = get_sub_field('module_description');
@@ -113,17 +115,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<div class="long-description"><?php echo $module_description;?></div>	
 							</div>
 						<?php endwhile; ?>
+						<?php else: ?>
+							<p>No modules entered.</p>
 					<?php endif; ?>				
 				</div>
 				<!--END LONG DESCRIPTION-->
 				<!--COURSE OUTLINE-->
-				<div class="outline holder" id="outline">
-					<?php 
-						$course_outline = get_field('course_outline')['course_outline'];
-						$course_link = get_field('course_outline')['full_course_outline_link'];						
-						echo '<h2>Course Outline</h2><div class="course-outline">' . $course_outline . '</div>';
-						echo '<a href="' . $course_link .'" class="btn btn-primary">See the full outline</a>';
-					;?>
+				<div class="outline holder" id="outline">					
+					<h2>Course Outline</h2>
+					<div class="course-outline">
+						<?php echo aln_course_outline();?>
+					</div>
+					<?php echo aln_course_outline_link();?>
 				</div>
 				<!--END COURSE OUTLINE-->
 				<!--COURSE DESIGN STATEMENT-->
@@ -137,6 +140,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 							        <li>✓ <?php echo $statement; ?></li>
 							    <?php endforeach; ?>
 							</ul>
+							<?php else:?>
+								<p>No design statements given.</p>
 						<?php endif; ?>
 				
 				</div>
