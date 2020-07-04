@@ -86,9 +86,8 @@ h1, h2, h3, h4, h5 {
 	font-size: calc(1.7rem + 2vw);
     letter-spacing: -.1rem;
 	font-family: 'Maax', serif;
-	float: right;   
 	line-height: 1;
-	margin: 40px auto;
+	margin: 40px 0 0 230px;
 }
 
 #logo a.navbar-brand:hover{
@@ -302,6 +301,7 @@ h1, h2, h3, h4, h5 {
 	#logo a.navbar-brand {
 		font-size: calc(1.5rem + 1vw);	  
 	    margin: 270px auto 0 auto;
+	    float: right;
 	}
  } 
 
