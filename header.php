@@ -33,7 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="container">
 					<!-- Your site title as branding in the menu -->						
 				<div id="logo">
-					<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"></a>
+					<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">Adaptation Learning Network<br>Portal</a>
 				</div>
 			</div>
 		<nav id="main-nav" class="navbar navbar-expand-md navbar-light" aria-labelledby="main-nav-label">
