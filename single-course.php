@@ -147,27 +147,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</div>
 				<!--END COURSE DESIGN STATEMENT-->
 				<!--COURSE INSTRUCTOR-->
-				<div class="instructor holder" id="instructor">
-					<?php 
-						$instructor_name = get_field('instructor')['instructor_name'];
-						if(get_field('instructor')['instructor_image']){
-							$instructor_image = get_field('instructor')['instructor_image']['sizes']['thumbnail'];
-						}
-						else {
-							$instructor_image = get_template_directory_uri() . '/imgs/symbol.jpg' ;
-						}
-						$instructor_bio = get_field('instructor')['instructor_biography'];	
-
-						echo '<h2>Instructor</h2><div class="row">';
-						echo '<div class="col-md-4">';
-						echo '<img src="' . $instructor_image . '" class="img-fluid instructor-bio-img" alt="Biography picture for ' . $instructor_name . '" >';
-					
-						echo '</div>';
-						echo '<div class="col-md-8">'; 
-						echo '<h3>' . $instructor_name . '</h3>';
-						echo $instructor_bio . '</div>';
-						echo '</div>';
-					;?>
+				<div class="instructor holder" id="instructor">					
+					<h2>Instructor</h2>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="<?php echo aln_instructor_image();?>" class="img-fluid instructor-bio-img" alt="Biography picture for <?php echo aln_instructor_name();?>" >
+						</div>
+						<div class="col-md-8">
+						<h3><?php echo aln_instructor_name();?></h3>
+						<p><?php echo aln_instructor_bio();?></p>
+						</div>
+					</div>
 				</div>
 				<!--END INSTRUCTOR-->
 			<!--ARTEFACT REPEATER-->	

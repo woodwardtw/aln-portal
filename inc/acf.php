@@ -70,6 +70,32 @@ function aln_course_outline_link(){
      }
 }
 
+function aln_instructor_image(){
+    if(get_field('instructor')['instructor_image']){
+       return $instructor_image = get_field('instructor')['instructor_image']['sizes']['thumbnail'];
+    }
+    else {
+        return $instructor_image = get_template_directory_uri() . '/imgs/mystery.png' ;//symbol.jpg
+    }
+}
+
+function aln_instructor_name(){
+    if(get_field('instructor')['instructor_name']){
+        return get_field('instructor')['instructor_name'];
+    } else {
+        return 'Mystery Instructor';
+    }
+}
+
+function aln_instructor_bio(){
+    if(get_field('instructor')['instructor_biography']){
+        return get_field('instructor')['instructor_biography'];
+    } else {
+        return 'Please enter an instructor biography. Understanding who is teaching a course is a key element in marketing the course.';
+    }
+}
+
+
 //ACF SAVE and LOAD JSON
 add_filter('acf/settings/save_json', 'alt_ee_json_save_point');
  
