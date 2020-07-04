@@ -155,7 +155,10 @@ function aln_list_courses($atts){
                       while ( $the_query->have_posts() ) : $the_query->the_post(); 
                       	$html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';	
                       endwhile;
+                      else :
+                      ( $html .= '<li>No courses entered yet.</li>' );
                   endif;
+
             wp_reset_query();  // Restore global post data stomped by the_post().
    return $html . '</ul>';
 }
