@@ -133,7 +133,7 @@ function aln_list_courses($atts){
       'post_type'   => 'course', 
       'post_status' => 'publish', 
       'order' => 'ASC',
-      'order_by' => 'title',  
+      'orderby' => 'name',  
       'nopaging' => false,                                        
                     );
 
@@ -144,14 +144,14 @@ function aln_list_courses($atts){
 			      'taxonomy' => 'Universities', // (string) - Taxonomy.
 			      'field' => 'name', // (string) - Select taxonomy term by Possible values are 'term_id', 'name', 'slug' or 'term_taxonomy_id'. Default value is 'term_id'.
 			      'terms' => array( $a['university'] ), // (int/string/array) - Taxonomy term(s).
-			      'include_children' => true, // (bool) - Whether or not to include children for hierarchical taxonomies. Defaults to true.
+			      'include_children' => false, // (bool) - Whether or not to include children for hierarchical taxonomies. Defaults to true.
 			      'operator' => 'IN' // (string) - Operator to test. Possible values are 'IN', 'NOT IN', 'AND', 'EXISTS' and 'NOT EXISTS'. Default value is 'IN'.
 			    )
 			  );
 	  } 
 
     $the_query = new WP_Query( $args );
-    //var_dump($the_query);
+    //print("<pre>".print_r($the_query,true)."</pre>");
                     if( $the_query->have_posts() ): 
                       while ( $the_query->have_posts() ) : $the_query->the_post(); 
                       	$html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';	
