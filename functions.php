@@ -154,7 +154,14 @@ function aln_list_courses($atts){
     //print("<pre>".print_r($the_query,true)."</pre>");
                     if( $the_query->have_posts() ): 
                       while ( $the_query->have_posts() ) : $the_query->the_post(); 
-                      	$html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';	
+                        $post_id = get_the_ID();
+                        if( have_rows('dates', $post_id) ):
+                          while( have_rows('dates', $post_id) ): the_row();
+                            $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . ' - ' . get_sub_field('course_start_date', $post_id) . '</a></li>';  
+                          endwhile;
+                        else :
+                          ($html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . ' - no date</a></li>');
+                        endif;
                       endwhile;
                       else :
                       ( $html .= '<li>No courses entered yet.</li>' );
@@ -162,6 +169,22 @@ function aln_list_courses($atts){
 
             wp_reset_query();  // Restore global post data stomped by the_post().
    return $html . '</ul>';
+
+
+                  //   if( $the_query->have_posts() ): 
+                  //     while ( $the_query->have_posts() ) : $the_query->the_post();    
+                  //       $post_id = get_the_ID();
+                  //      //  if( have_rows('dates', $post_id) ):
+                  //      //    while( have_rows('dates', $post_id) ): the_row();                          
+                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . ' - ' . get_sub_field('registration_start_date', $post_id). '</a></li>';                           
+                  //      //    endwhile; 
+                  //      //    else :
+                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+                  //      // endif;
+                  //     else :
+                  //     ( $html .= '<li>No courses entered yet.</li>' );
+                  // endif;
+
 }
 
 add_shortcode( 'list-courses', 'aln_list_courses' );
