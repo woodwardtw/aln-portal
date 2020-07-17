@@ -37,6 +37,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<h2>Learner Engagement</h2>
 						<div class="hours"><?php echo aln_engagement_hours();?></div>
 					</div>
+					<div class="col-md-12 link-row">
+						<h2>PSI Registration Page</h2>
+						<div class="registration-link"><?php echo aln_registration_link();?></div>
+					</div>
 				</div>
 
 				<!--DATE REPEATER-->

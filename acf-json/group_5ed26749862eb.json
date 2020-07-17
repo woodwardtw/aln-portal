@@ -97,6 +97,22 @@
                     "return_format": "value",
                     "ajax": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_5f11d3b26d93c",
+                    "label": "Link to your PSI registration page",
+                    "name": "psi_registration_page",
+                    "type": "url",
+                    "instructions": "This information is required for ALN so we can help market your course.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
                 }
             ]
         },
@@ -390,7 +406,7 @@
                     "label": "Instructor Name",
                     "name": "instructor_name",
                     "type": "text",
-                    "instructions": "This information is required for ALN so we can help market your course.",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -433,7 +449,7 @@
                     "label": "Instructor Biography",
                     "name": "instructor_biography",
                     "type": "textarea",
-                    "instructions": "This information is required for ALN so we can help market your course.",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -593,5 +609,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1594980803
+    "modified": 1595003906
 }
