@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 		        'field_groups' => array(6,22), // Create post field group ID(s)
 	            'form' => true,
 	            'return' => '%post_url%' , // Redirect to new post url         
-		        'submit_value'  => 'Create new course'
+		        'submit_value'  => 'Add new course'
 		    )); 
 			} else {
 				echo '<a href="'. wp_login_url( get_permalink() ).'">Please login to create new courses.</a>';

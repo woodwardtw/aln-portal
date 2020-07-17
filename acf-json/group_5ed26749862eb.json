@@ -44,7 +44,7 @@
                     "label": "Registration Fee",
                     "name": "registration_fee",
                     "type": "number",
-                    "instructions": "Enter the registration fee not including GST",
+                    "instructions": "Enter the registration fee not including GST.\r\n\r\nThis information is required for ALN so we can help market your course.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -105,7 +105,7 @@
             "label": "Dates",
             "name": "dates",
             "type": "repeater",
-            "instructions": "Please include multiple dates for multiple course offerings.",
+            "instructions": "Please include multiple dates for multiple course offerings.\r\n\r\nThis information is required for ALN so we can help market your course.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -221,7 +221,7 @@
             "label": "Short Course Description",
             "name": "short_course_description",
             "type": "textarea",
-            "instructions": "Please limit your entry to <span id=\"short-desc-limit\">500<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.\r\n<div class=\"progress\">\r\n  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" id=\"short-desc-bar\"><\/div>\r\n<\/div>",
+            "instructions": "Please limit your entry to <span id=\"short-desc-limit\">500<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.\r\n<div class=\"progress\">\r\n  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" id=\"short-desc-bar\"><\/div>\r\n<\/div>\r\nThis information is required for ALN so we can help market your course.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -375,7 +375,7 @@
             "label": "Instructor",
             "name": "instructor",
             "type": "group",
-            "instructions": "Instructor presence is a key element in helping market your course. Please help us by providing this information.",
+            "instructions": "This information is required for ALN so we can help market your course.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -390,7 +390,7 @@
                     "label": "Instructor Name",
                     "name": "instructor_name",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "This information is required for ALN so we can help market your course.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -433,7 +433,7 @@
                     "label": "Instructor Biography",
                     "name": "instructor_biography",
                     "type": "textarea",
-                    "instructions": "",
+                    "instructions": "This information is required for ALN so we can help market your course.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -593,5 +593,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1593862677
+    "modified": 1594980803
 }
