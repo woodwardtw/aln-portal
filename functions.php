@@ -110,7 +110,7 @@ function aln_login_redirect( $redirect_to, $request, $user ) {
     if ( isset( $user->roles ) && is_array( $user->roles ) ) {
 
         if ( in_array( 'aln_author', $user->roles ) ) {
-        	 return home_url();
+        	 return home_url().'/all-courses/';
         } else {
         	return admin_url();
         }
