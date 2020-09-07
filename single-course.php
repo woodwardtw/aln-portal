@@ -62,10 +62,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 						
 							<?php while( have_rows('dates') ): the_row(); 
 								// vars
-								$reg_start = get_sub_field('registration_start_date');
-								$reg_end = get_sub_field('registration_end_date');
-								$course_start = get_sub_field('course_start_date');
-								$course_end = get_sub_field('course_end_date');
+								if(get_sub_field('registration_start_date')){
+									$reg_start = get_sub_field('registration_start_date');
+								} else {
+									$reg_start = 'Not entered';
+								}
+								if (get_sub_field('registration_end_date')){
+									$reg_end = get_sub_field('registration_end_date');
+								} else {
+									$reg_end = 'Not entered';
+								}
+								if(get_sub_field('course_start_date')){
+									$course_start = get_sub_field('course_start_date');									
+								} else {
+									$course_start = 'Not Entered';
+								}
+								if(get_sub_field('course_end_date')){
+									$course_end = get_sub_field('course_end_date');
+								} else {
+									$course_end = 'Not entered';
+								}
+								
 								$offering_number = get_sub_field('offering_number');
 								?>
 								
