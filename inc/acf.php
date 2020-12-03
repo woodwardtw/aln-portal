@@ -47,8 +47,18 @@ function aln_registration_link(){
      if(get_field('basic_course_information')["psi_registration_page"] != null || get_field('basic_course_information')["psi_registration_page"] != ''){
         return '<a href="' . get_field('basic_course_information')["psi_registration_page"] . '" aria-label="Go to the PSI registration page.">' . get_field('basic_course_information')["psi_registration_page"] . '</a>' ;
     } else {
-        return 'No link given This is essential for the marketing of your course.';
+        return FALSE; //'No link given This is essential for the marketing of your course.'
     }
+}
+
+function aln_registration_contact(){
+    $title = get_the_title();
+     if (get_field('basic_course_information')["course_contact_name"] != null || get_field('basic_course_information')["course_contact_email"]){
+         $name = get_field('basic_course_information')["course_contact_name"];
+         $email = get_field('basic_course_information')["course_contact_email"];
+         $phone = get_field('basic_course_information')["course_contact_phone"];
+        return "Name: {$name}<br>Phone: {$phone}<br>Email: <a href='mailto:{$email}?subject={$title} Course Inquiry'>{$email}</a>";
+     }
 }
 
 function aln_short_course_description(){

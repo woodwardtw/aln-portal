@@ -190,6 +190,72 @@ function aln_list_courses($atts){
 add_shortcode( 'list-courses', 'aln_list_courses' );
 
 
+
+
+//get the quotes for the front page
+function aln_list_unique_courses($atts){  
+  $a = shortcode_atts( array(
+    'university' => '',
+  ), $atts );
+
+  
+  $html = "<ul>";
+  $args = array(
+      'posts_per_page' => 30,      
+      'post_type'   => 'course', 
+      'post_status' => 'publish', 
+      'order' => 'ASC',
+      'orderby' => 'name',  
+      'nopaging' => false,                                        
+                    );
+
+    if ($a['university']) {
+      $args['tax_query'] = array( // (array) - use taxonomy parameters (available with Version 3.1).
+          'relation' => 'AND', // (string) - The logical relationship between each inner taxonomy array when there is more than one. Possible values are 'AND', 'OR'. Do not use with a single inner taxonomy array. Default value is 'AND'.
+          array(
+            'taxonomy' => 'Universities', // (string) - Taxonomy.
+            'field' => 'name', // (string) - Select taxonomy term by Possible values are 'term_id', 'name', 'slug' or 'term_taxonomy_id'. Default value is 'term_id'.
+            'terms' => array( $a['university'] ), // (int/string/array) - Taxonomy term(s).
+            'include_children' => false, // (bool) - Whether or not to include children for hierarchical taxonomies. Defaults to true.
+            'operator' => 'IN' // (string) - Operator to test. Possible values are 'IN', 'NOT IN', 'AND', 'EXISTS' and 'NOT EXISTS'. Default value is 'IN'.
+          )
+        );
+    } 
+
+    $the_query = new WP_Query( $args );
+    //print("<pre>".print_r($the_query,true)."</pre>");
+                    if( $the_query->have_posts() ): 
+                      while ( $the_query->have_posts() ) : $the_query->the_post(); 
+                        $post_id = get_the_ID();                        
+                          ($html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>');
+                      endwhile;
+                      else :
+                      ( $html .= '<li>No courses entered yet.</li>' );
+                  endif;
+
+            wp_reset_query();  // Restore global post data stomped by the_post().
+   return $html . '</ul>';
+
+
+                  //   if( $the_query->have_posts() ): 
+                  //     while ( $the_query->have_posts() ) : $the_query->the_post();    
+                  //       $post_id = get_the_ID();
+                  //      //  if( have_rows('dates', $post_id) ):
+                  //      //    while( have_rows('dates', $post_id) ): the_row();                          
+                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . ' - ' . get_sub_field('registration_start_date', $post_id). '</a></li>';                           
+                  //      //    endwhile; 
+                  //      //    else :
+                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+                  //      // endif;
+                  //     else :
+                  //     ( $html .= '<li>No courses entered yet.</li>' );
+                  // endif;
+
+}
+
+add_shortcode( 'list-unique-courses', 'aln_list_unique_courses' );
+
+
 //stop media library stuff
 
 // Conditionally don't load the Media Library tab/ content
@@ -245,3 +311,9 @@ function aln_course_email( $post_id ) {
   wp_mail($to, $subject, $body, $headers );
   
 }
+
+
+//CREATE CUSTOM COURSE IMAGE SIZE
+add_image_size( 'course-image', 560, 315, true );
+
+//560x315

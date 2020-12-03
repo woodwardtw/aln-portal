@@ -25,6 +25,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<main class="site-main" id="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
+					<?php 
+					$img = get_field('featured_image');
+					echo "<img src='{$img['sizes']['course-image']}' class='img-fluid'>";
+					?>
 					<h1><?php the_title();?></h1>
 					<div class="uni"><?php echo aln_university();?></div>
 				
@@ -38,9 +42,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="hours"><?php echo aln_engagement_hours();?></div>
 					</div>
 					<div class="col-md-12 link-row">
+						<?php if (aln_registration_link() != FALSE) : ?>
 						<h2>PSI Registration Page</h2>
 						<div class="registration-link"><?php echo aln_registration_link();?></div>
-					</div>
+						<?php else : ?>
+						<h2>PSI Registration Contact</h2>
+						<?php echo aln_registration_contact();?>
+					<?php endif;?>
+					</div>					
 				</div>
 
 				<!--DATE REPEATER-->
@@ -49,9 +58,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<table class="table">
 									  <thead>
 									    <tr>
-									      <th scope="col">Offering Number</th>
-									      <th scope="col">Registration Start Date</th>
-									      <th scope="col">Registration End Date</th>
+									      <th scope="col">Offering Number</th>									     
 									      <th scope="col">Course Start Date</th>
 									      <th scope="col">Course End Date</th>
 									    </tr>
@@ -61,17 +68,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php if( have_rows('dates') ): ?>
 						
 							<?php while( have_rows('dates') ): the_row(); 
-								// vars
-								if(get_sub_field('registration_start_date')){
-									$reg_start = get_sub_field('registration_start_date');
-								} else {
-									$reg_start = 'Not entered';
-								}
-								if (get_sub_field('registration_end_date')){
-									$reg_end = get_sub_field('registration_end_date');
-								} else {
-									$reg_end = 'Not entered';
-								}
+								
 								if(get_sub_field('course_start_date')){
 									$course_start = get_sub_field('course_start_date');									
 								} else {
@@ -90,12 +87,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									    <?php if( $course_end ): ?>
 											<?php echo '<td>' . $offering_number . '</td>' ; ?>
 										<?php endif; ?>
-									    <?php if( $reg_start ): ?>
-											<?php echo '<td>' . $reg_start . '</td>' ; ?>
-										<?php endif; ?>
-									     <?php if( $reg_end ): ?>
-											<?php echo '<td>' . $reg_end . '</td>' ; ?>
-										<?php endif; ?>
+									    
 										<?php if( $course_start ): ?>
 											<?php echo '<td>' . $course_start . '</td>' ; ?>
 										<?php endif; ?>
