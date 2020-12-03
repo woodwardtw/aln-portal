@@ -27,7 +27,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php 
 					$img = get_field('featured_image');
-					echo "<img src='{$img['sizes']['course-image']}' class='img-fluid'>";
+					$title = get_the_title();
+					echo "<img src='{$img['sizes']['course-image']}' class='img-fluid course-image' alt='{$title} representative image.'>";
 					?>
 					<h1><?php the_title();?></h1>
 					<div class="uni"><?php echo aln_university();?></div>
