@@ -53,10 +53,19 @@ function aln_registration_link(){
 
 function aln_registration_contact(){
     $title = get_the_title();
+    $name = 'N/A';
+    $phone = 'N/A';
+    $email = 'N/A';
      if (get_field('basic_course_information')["course_contact_name"] != null || get_field('basic_course_information')["course_contact_email"]){
-         $name = get_field('basic_course_information')["course_contact_name"];
-         $email = get_field('basic_course_information')["course_contact_email"];
+        if (get_field('basic_course_information')["course_contact_name"]){
+            $name = get_field('basic_course_information')["course_contact_name"];
+        }
+        if (get_field('basic_course_information')["course_contact_email"]){
+            $email = get_field('basic_course_information')["course_contact_email"];
+        } 
+        if (get_field('basic_course_information')["course_contact_phone"]){            
          $phone = get_field('basic_course_information')["course_contact_phone"];
+        }
         return "Name: {$name}<br>Phone: {$phone}<br>Email: <a href='mailto:{$email}?subject={$title} Course Inquiry'>{$email}</a>";
      }
 }
