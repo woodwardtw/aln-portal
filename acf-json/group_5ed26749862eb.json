@@ -3,8 +3,67 @@
     "title": "Course",
     "fields": [
         {
+            "key": "field_627fbfa62d99d",
+            "label": "Big Picture",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ed26754e352d",
+            "label": "Short Course Description",
+            "name": "short_course_description",
+            "type": "textarea",
+            "instructions": "Please limit your entry to <span id=\"short-desc-limit\">500<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.\r\n<div class=\"progress\">\r\n  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" id=\"short-desc-bar\"><\/div>\r\n<\/div>\r\nThis information is required for ALN so we can help market your course.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_627fc0a587c0a",
+            "label": "Program",
+            "name": "program",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "program"
+            ],
+            "taxonomy": "",
+            "filters": "",
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
             "key": "field_5fc0f350f31b9",
-            "label": "Featured Image",
+            "label": "Course Banner Image",
             "name": "featured_image",
             "type": "image",
             "instructions": "",
@@ -25,193 +84,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_5ed98440cdf19",
-            "label": "Basic Course Information",
-            "name": "basic_course_information",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5eecf51b84b35",
-                    "label": "University",
-                    "name": "university",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "Universities",
-                    "field_type": "checkbox",
-                    "add_term": 1,
-                    "save_terms": 1,
-                    "load_terms": 1,
-                    "return_format": "object",
-                    "multiple": 0,
-                    "allow_null": 0
-                },
-                {
-                    "key": "field_5ed9845acdf1a",
-                    "label": "Registration Fee",
-                    "name": "registration_fee",
-                    "type": "number",
-                    "instructions": "Enter the registration fee not including GST.\r\n\r\nThis information is required for ALN so we can help market your course.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "100.00",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
-                {
-                    "key": "field_5ed984a5d9b03",
-                    "label": "Learner Engagement Hours",
-                    "name": "learner_engagement_hours",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "1": "1",
-                        "2": "2",
-                        "3": "3",
-                        "4": "4",
-                        "5": "5",
-                        "6": "6",
-                        "7": "7",
-                        "8": "8",
-                        "9": "9",
-                        "10": "10",
-                        "11": "11",
-                        "12": "12",
-                        "13": "13",
-                        "14": "14",
-                        "15": "15"
-                    },
-                    "default_value": false,
-                    "allow_null": 1,
-                    "multiple": 0,
-                    "ui": 0,
-                    "return_format": "value",
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5f11d3b26d93c",
-                    "label": "Link to your PSI registration page",
-                    "name": "psi_registration_page",
-                    "type": "url",
-                    "instructions": "This information is required for ALN so we can help market your course.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5fc8db65ff129",
-                    "label": "Course Contact",
-                    "name": "",
-                    "type": "message",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "If you don't have a course registration page, please provide the contact information below.",
-                    "new_lines": "wpautop",
-                    "esc_html": 0
-                },
-                {
-                    "key": "field_5fc8dbbdff12a",
-                    "label": "Course Contact Name",
-                    "name": "course_contact_name",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5fc8dbc5ff12b",
-                    "label": "Course Contact Email",
-                    "name": "course_contact_email",
-                    "type": "email",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_5fc8dbd0ff12c",
-                    "label": "Course Contact Phone",
-                    "name": "course_contact_phone",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
         },
         {
             "key": "field_5ee4c5e688b33",
@@ -265,111 +137,6 @@
                     "display_format": "d\/m\/Y",
                     "return_format": "d\/m\/Y",
                     "first_day": 0
-                },
-                {
-                    "key": "field_5ef5cdbb5efbb",
-                    "label": "Offering Number",
-                    "name": "offering_number",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "8",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "1": "1",
-                        "2": "2",
-                        "3": "3",
-                        "4": "4"
-                    },
-                    "default_value": false,
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "return_format": "value",
-                    "ajax": 0,
-                    "placeholder": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5ed26754e352d",
-            "label": "Short Course Description",
-            "name": "short_course_description",
-            "type": "textarea",
-            "instructions": "Please limit your entry to <span id=\"short-desc-limit\">500<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.\r\n<div class=\"progress\">\r\n  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" id=\"short-desc-bar\"><\/div>\r\n<\/div>\r\nThis information is required for ALN so we can help market your course.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "wpautop"
-        },
-        {
-            "key": "field_5ed3a219c08d9",
-            "label": "Modules",
-            "name": "long_course_description",
-            "type": "repeater",
-            "instructions": "Add modules below.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "row",
-            "button_label": "Add Module",
-            "sub_fields": [
-                {
-                    "key": "field_5ee89639cfcab",
-                    "label": "Module Name",
-                    "name": "module_name",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5ee8965bcfcac",
-                    "label": "Module Description",
-                    "name": "module_description",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
                 }
             ]
         },
@@ -484,34 +251,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5ef8d7593da64",
-                    "label": "Instructor Image",
-                    "name": "instructor_image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "30",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "thumbnail",
-                    "library": "uploadedTo",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
                     "key": "field_5ef8d7413da63",
-                    "label": "Instructor Biography",
+                    "label": "Instructor Bio Link",
                     "name": "instructor_biography",
-                    "type": "textarea",
+                    "type": "url",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -521,85 +264,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5ed992577306a",
-            "label": "Course Artefacts",
-            "name": "course_artefacts",
-            "type": "repeater",
-            "instructions": "Using the button to the right, add important learning artefacts to this submission. If you created a trailer for your course, made any creative commons media, etc.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Artefact",
-            "sub_fields": [
-                {
-                    "key": "field_5ed992767306b",
-                    "label": "Artefact Title",
-                    "name": "artefact_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5ed992c37306c",
-                    "label": "Artefact Link",
-                    "name": "artefact_link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
                     "placeholder": ""
-                },
-                {
-                    "key": "field_5ed992df7306d",
-                    "label": "Artefact Description",
-                    "name": "artefact_description",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
                 }
             ]
         },
@@ -639,6 +304,50 @@
             "message": "You have now completed your course submission. \r\n\r\nWhen you click on the 'Create new course' button below you'll be taken to the course page. That will give you the chance to see the submission as others will see it. This is the page where you can make updates or edit information should that be necessary.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_627fc0d3d9a75",
+            "label": "Delivery Method",
+            "name": "delivery_method",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_format",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_627fc18d5c108",
+            "label": "Province",
+            "name": "province",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "Provinces",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
         }
     ],
     "location": [
@@ -672,5 +381,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1606999041
+    "show_in_rest": 0,
+    "modified": 1652539811
 }
