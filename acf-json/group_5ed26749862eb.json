@@ -62,6 +62,28 @@
             "return_format": "object"
         },
         {
+            "key": "field_627fc0d3d9a75",
+            "label": "Delivery Method",
+            "name": "delivery_method",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_format",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
             "key": "field_5fc0f350f31b9",
             "label": "Course Banner Image",
             "name": "featured_image",
@@ -306,28 +328,6 @@
             "esc_html": 0
         },
         {
-            "key": "field_627fc0d3d9a75",
-            "label": "Delivery Method",
-            "name": "delivery_method",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "post_format",
-            "field_type": "checkbox",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0
-        },
-        {
             "key": "field_627fc18d5c108",
             "label": "Province",
             "name": "province",
@@ -382,5 +382,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652539811
+    "modified": 1652540313
 }

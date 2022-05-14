@@ -387,6 +387,7 @@ function create_program_cpt() {
   $wp_rewrite->flush_rules();
 }
 add_action( 'init', 'create_program_cpt', 0 );
+
 add_action( 'init', 'create_province_taxonomies', 0 );
 function create_province_taxonomies()
 {
@@ -418,6 +419,78 @@ function create_province_taxonomies()
     'rewrite' => array( 'slug' => 'province' ),
     'show_in_rest'          => true,
     'rest_base'             => 'province',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => false,    
+  ));
+}
+
+add_action( 'init', 'create_theme_taxonomies', 0 );
+function create_theme_taxonomies()
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Themes', 'taxonomy general name' ),
+    'singular_name' => _x( 'theme', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Themes' ),
+    'popular_items' => __( 'Popular Themes' ),
+    'all_items' => __( 'All Themes' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Themes' ),
+    'update_item' => __( 'Update theme' ),
+    'add_new_item' => __( 'Add New theme' ),
+    'new_item_name' => __( 'New theme' ),
+    'add_or_remove_items' => __( 'Add or remove Themes' ),
+    'choose_from_most_used' => __( 'Choose from the most used Themes' ),
+    'menu_name' => __( 'Theme' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('theme',array('post'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => false,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'theme' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'theme',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_nav_menus' => false,    
+  ));
+}
+
+add_action( 'init', 'create_trade_taxonomies', 0 );
+function create_trade_taxonomies()
+{
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name' => _x( 'Trades', 'taxonomy general name' ),
+    'singular_name' => _x( 'trade', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Trades' ),
+    'popular_items' => __( 'Popular Trades' ),
+    'all_items' => __( 'All Trades' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Trades' ),
+    'update_item' => __( 'Update trade' ),
+    'add_new_item' => __( 'Add New trade' ),
+    'new_item_name' => __( 'New trade' ),
+    'add_or_remove_items' => __( 'Add or remove Trades' ),
+    'choose_from_most_used' => __( 'Choose from the most used Trades' ),
+    'menu_name' => __( 'Trade' ),
+  );
+
+//registers taxonomy specific post types - default is just post
+  register_taxonomy('trades',array('post'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => false,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'trade' ),
+    'show_in_rest'          => true,
+    'rest_base'             => 'trade',
     'rest_controller_class' => 'WP_REST_Terms_Controller',
     'show_in_nav_menus' => false,    
   ));
