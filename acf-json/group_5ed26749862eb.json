@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_627fbfa62d99d",
-            "label": "Big Picture",
+            "label": "***Big Picture",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -126,6 +126,45 @@
             "return_format": "id",
             "multiple": 0,
             "allow_null": 0
+        },
+        {
+            "key": "field_627fc7933d92b",
+            "label": "Profession and Trades",
+            "name": "profession_and_trades",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "trades",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_627fca121aafc",
+            "label": "***Details",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_5fc0f350f31b9",
@@ -283,28 +322,6 @@
             "save_custom": 0
         },
         {
-            "key": "field_627fc7933d92b",
-            "label": "Profession and Trades",
-            "name": "profession_and_trades",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "trades",
-            "field_type": "checkbox",
-            "add_term": 1,
-            "save_terms": 1,
-            "load_terms": 1,
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0
-        },
-        {
             "key": "field_5ef882e14e944",
             "label": "Instructor",
             "name": "instructor",
@@ -426,5 +443,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652541416
+    "modified": 1652542012
 }
