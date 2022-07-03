@@ -26,9 +26,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php 
-					$img = get_field('featured_image');
-					$title = get_the_title();
-					echo "<img src='{$img['sizes']['course-image']}' class='img-fluid course-image' alt='{$title} representative image.'>";
+					if(get_field('featured_image')){
+						$img = get_field('featured_image');
+						$title = get_the_title();
+						echo "<img src='{$img['sizes']['course-image']}' class='img-fluid course-image' alt='{$title} representative image.'>";
+						}					
 					?>
 					<h1><?php the_title();?></h1>
 					<div class="uni"><?php echo aln_university();?></div>
@@ -59,7 +61,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<table class="table">
 									  <thead>
 									    <tr>
-									      <th scope="col">Offering Number</th>									     
 									      <th scope="col">Course Start Date</th>
 									      <th scope="col">Course End Date</th>
 									    </tr>
@@ -81,13 +82,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 									$course_end = 'Not entered';
 								}
 								
-								$offering_number = get_sub_field('offering_number');
 								?>
 								
-									    <tr>
-									    <?php if( $course_end ): ?>
-											<?php echo '<td>' . $offering_number . '</td>' ; ?>
-										<?php endif; ?>
+									    <tr>									  
 									    
 										<?php if( $course_start ): ?>
 											<?php echo '<td>' . $course_start . '</td>' ; ?>
@@ -116,96 +113,19 @@ $container = get_theme_mod( 'understrap_container_type' );
                   </div>
 				</div>
 				<!--END SHORT DESCRIPTION-->
-				<!--LONG DESCRIPTION-->
-				<div class="long-holder holder" id="full-desc">
-					<h2>Course Modules</h2>
-					<?php if( have_rows('long_course_description') ): ?>
-						<?php while( have_rows('long_course_description') ): the_row();
-							$module_name = get_sub_field('module_name');
-							$module_description = get_sub_field('module_description');
-						?> 
-							<div class="module">
-								<h3 class="module-description" id="module-<?php echo get_row_index();?>"><?php echo $module_name;?></h3>
-								<div class="long-description"><?php echo $module_description;?></div>	
-							</div>
-						<?php endwhile; ?>
-						<?php else: ?>
-							<p>No modules entered.</p>
-					<?php endif; ?>				
-				</div>
-				<!--END LONG DESCRIPTION-->
-				<!--COURSE OUTLINE-->
-				<div class="outline holder" id="outline">					
-					<h2>Course Outline</h2>
-					<div class="course-outline">
-						<?php echo aln_course_outline();?>
-					</div>
-					<?php echo aln_course_outline_link();?>
-				</div>
-				<!--END COURSE OUTLINE-->
-				<!--COURSE DESIGN STATEMENT-->
-				<div class="design holder" id="design-statement">
-					<?php 
-						$course_design = get_field('course_design_statement');
-						echo '<h2>Course Design Statements</h2>';
-						if( $course_design ): ?>
-							<ul>
-							    <?php foreach( $course_design as $statement ): ?>
-							        <li>✓ <?php echo $statement; ?></li>
-							    <?php endforeach; ?>
-							</ul>
-							<?php else:?>
-								<p>No design statements given.</p>
-						<?php endif; ?>
-				
-				</div>
-				<!--END COURSE DESIGN STATEMENT-->
+							
 				<!--COURSE INSTRUCTOR-->
 				<div class="instructor holder" id="instructor">					
 					<h2>Instructor</h2>
-					<div class="row">
-						<div class="col-md-4">
-							<img src="<?php echo aln_instructor_image();?>" class="img-fluid instructor-bio-img" alt="Biography picture for <?php echo aln_instructor_name();?>" >
-						</div>
-						<div class="col-md-8">
+					<div class="row">					
+						<div class="col-md-12">
 						<h3><?php echo aln_instructor_name();?></h3>
 						<p><?php echo aln_instructor_bio();?></p>
 						</div>
 					</div>
 				</div>
 				<!--END INSTRUCTOR-->
-			<!--ARTEFACT REPEATER-->	
-					<?php if( have_rows('course_artefacts') ): ?>
-						<div class="artefact-holder holder" id="artefacts">
-							<h2>Course Artefacts</h2>
-		
-							<?php while( have_rows('course_artefacts') ): the_row(); 
-								// vars
-								$artefact_title = get_sub_field('artefact_title');
-								$artefact_url = get_sub_field('artefact_link');
-								$artefact_desc = get_sub_field('artefact_description');
-
-								?>
-								<div class="d-flex flex-row artefact-row">								
-										<?php if( $artefact_url ): ?>
-											<?php echo '<a href="'.$artefact_url . '" class="artefact-link">';?>
-										<?php endif; ?>
-										<?php if( $artefact_title ): ?>
-											<?php echo $artefact_title;?>
-										<?php endif; ?>
-										<?php if( $artefact_url ): ?>
-											<?php echo '</a>';?>
-										<?php endif; ?>
-										<?php if( $artefact_desc ): ?>
-											<?php echo '<span class="artefact-desc">' . $artefact_desc . '</span>';?>
-										<?php endif; ?>
-								</div>
-										
-
-							<?php endwhile; ?>
-						</div>
-						<?php endif; ?>
-				<!--END ARTEFACT REPEATER-->
+			
 				
 			<?php 
 				if(get_field('allowed_editors')){

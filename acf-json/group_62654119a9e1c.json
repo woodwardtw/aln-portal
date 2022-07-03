@@ -1,13 +1,13 @@
 {
     "key": "group_62654119a9e1c",
-    "title": "Institution",
+    "title": "Organization",
     "fields": [],
     "location": [
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "university"
+                "value": "organization"
             }
         ]
     ],
@@ -20,5 +20,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652374407
+    "modified": 1653737655
 }

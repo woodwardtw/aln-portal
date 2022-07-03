@@ -22,7 +22,8 @@ $understrap_includes = array(
 	'/jetpack.php',                         // Load Jetpack compatibility file.
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
 	'/woocommerce.php',                     // Load WooCommerce functions.
-	'/editor.php',                          // Load Editor functions.
+	'/editor.php',  
+  '/custom-data.php',                      // Load cpts and taxonomies.
 	'/deprecated.php',                      // Load deprecated functions.
 	'/acf.php',                             // Load ACF functions.
 );
@@ -171,20 +172,6 @@ function aln_list_courses($atts){
    return $html . '</ul>';
 
 
-                  //   if( $the_query->have_posts() ): 
-                  //     while ( $the_query->have_posts() ) : $the_query->the_post();    
-                  //       $post_id = get_the_ID();
-                  //      //  if( have_rows('dates', $post_id) ):
-                  //      //    while( have_rows('dates', $post_id) ): the_row();                          
-                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . ' - ' . get_sub_field('registration_start_date', $post_id). '</a></li>';                           
-                  //      //    endwhile; 
-                  //      //    else :
-                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
-                  //      // endif;
-                  //     else :
-                  //     ( $html .= '<li>No courses entered yet.</li>' );
-                  // endif;
-
 }
 
 add_shortcode( 'list-courses', 'aln_list_courses' );
@@ -236,20 +223,7 @@ function aln_list_unique_courses($atts){
             wp_reset_query();  // Restore global post data stomped by the_post().
    return $html . '</ul>';
 
-
-                  //   if( $the_query->have_posts() ): 
-                  //     while ( $the_query->have_posts() ) : $the_query->the_post();    
-                  //       $post_id = get_the_ID();
-                  //      //  if( have_rows('dates', $post_id) ):
-                  //      //    while( have_rows('dates', $post_id) ): the_row();                          
-                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . ' - ' . get_sub_field('registration_start_date', $post_id). '</a></li>';                           
-                  //      //    endwhile; 
-                  //      //    else :
-                  //      //      $html .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
-                  //      // endif;
-                  //     else :
-                  //     ( $html .= '<li>No courses entered yet.</li>' );
-                  // endif;
+            
 
 }
 
@@ -317,3 +291,73 @@ function aln_course_email( $post_id ) {
 add_image_size( 'course-image', 560, 315, true );
 
 //560x315
+
+add_action('acf/save_post', 'aln_course_org_as_cat');
+
+function aln_course_org_as_cat($post_id){
+  if(get_field('organization')){
+      $orgs = get_field('organization');
+      //write_log($orgs);
+      $cats = array();
+      foreach ($orgs as $org){
+          $org_slug = $org->post_name;
+          if(get_term_by( 'slug', $org_slug, 'organizations')){
+            //$cat = get_category_by_slug($org_slug);  
+            $cat = get_term_by( 'slug', $org_slug, 'organizations');
+
+            //write_log($cat->term_id);
+            array_push($cats, $cat->term_id);
+          } else {
+            $new_cat = wp_insert_term( $org->post_title, 'organizations' );
+            //write_log($new_cat);
+            array_push($cats, $new_cat);
+          }
+                  
+      } 
+      //wp_set_post_categories( $post_id, $cats, false);
+      wp_set_post_terms( $post_id, $cats, 'organizations', false );
+
+  }
+}
+
+add_action('acf/save_post', 'aln_course_program_as_cat');
+
+function aln_course_program_as_cat($post_id){
+  if(get_field('program')){
+      $orgs = get_field('program');
+      //write_log($orgs);
+      $cats = array();
+      foreach ($orgs as $org){
+          $org_slug = $org->post_name;
+          if(get_term_by( 'slug', $org_slug, 'programs')){
+            //$cat = get_category_by_slug($org_slug);  
+            $cat = get_term_by( 'slug', $org_slug, 'programs');
+
+            //write_log($cat->term_id);
+            array_push($cats, $cat->term_id);
+          } else {
+            $new_cat = wp_insert_term( $org->post_title, 'programs' );
+            //write_log($new_cat);
+            array_push($cats, $new_cat);
+          }
+                  
+      } 
+      //wp_set_post_categories( $post_id, $cats, false);
+      wp_set_post_terms( $post_id, $cats, 'programs', false );
+
+  }
+}
+
+
+
+//LOGGER -- like frogger but more useful
+
+if ( ! function_exists('write_log')) {
+   function write_log ( $log )  {
+      if ( is_array( $log ) || is_object( $log ) ) {
+         error_log( print_r( $log, true ) );
+      } else {
+         error_log( $log );
+      }
+   }
+}

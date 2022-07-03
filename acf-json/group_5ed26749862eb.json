@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_627fbfa62d99d",
-            "label": "***Big Picture",
+            "label": "****Big Picture",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -24,7 +24,7 @@
             "label": "Short Course Description",
             "name": "short_course_description",
             "type": "textarea",
-            "instructions": "Please limit your entry to <span id=\"short-desc-limit\">500<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.\r\n<div class=\"progress\">\r\n  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" id=\"short-desc-bar\"><\/div>\r\n<\/div>\r\nThis information is required for ALN so we can help market your course.",
+            "instructions": "Consider including the following: \r\n-a link to the course outline\r\n-pre-requirements link\r\n-details about professional development credit\r\n\r\nPlease limit your entry to <span id=\"short-desc-limit\">1000<\/span> words. You've used <span id=\"short-desc-limit-used\">0<\/span> words so far.\r\n<div class=\"progress\">\r\n  <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" id=\"short-desc-bar\"><\/div>\r\n<\/div>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -62,10 +62,10 @@
             "return_format": "object"
         },
         {
-            "key": "field_627fc0d3d9a75",
-            "label": "Delivery Method",
-            "name": "delivery_method",
-            "type": "taxonomy",
+            "key": "field_6292091418d9c",
+            "label": "Organization",
+            "name": "organization",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -74,7 +74,30 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "post_format",
+            "post_type": [
+                "organization"
+            ],
+            "taxonomy": "",
+            "filters": "",
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_627fc0d3d9a75",
+            "label": "Delivery Method",
+            "name": "delivery_method",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "24",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "delivery",
             "field_type": "checkbox",
             "add_term": 1,
             "save_terms": 1,
@@ -92,13 +115,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "24",
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "category",
+            "taxonomy": "provinces",
             "field_type": "checkbox",
-            "add_term": 1,
+            "add_term": 0,
             "save_terms": 1,
             "load_terms": 1,
             "return_format": "id",
@@ -114,7 +137,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "24",
                 "class": "",
                 "id": ""
             },
@@ -136,7 +159,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "24",
                 "class": "",
                 "id": ""
             },
@@ -167,10 +190,31 @@
             "esc_html": 0
         },
         {
-            "key": "field_5fc0f350f31b9",
-            "label": "Course Banner Image",
-            "name": "featured_image",
-            "type": "image",
+            "key": "field_628f6ed122c87",
+            "label": "Registration Fee",
+            "name": "registration_fee",
+            "type": "number",
+            "instructions": "Indicate the registration fee in numbers.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 100,
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_628f6f10cabc1",
+            "label": "PSI registration page link",
+            "name": "psi_registration_page_link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -179,16 +223,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "course-image",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_5ee4c5e688b33",
@@ -218,7 +254,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "23",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -235,7 +271,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "23",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -246,80 +282,85 @@
             ]
         },
         {
-            "key": "field_5ed62f532fdff",
-            "label": "Course Outline",
-            "name": "course_outline",
-            "type": "group",
-            "instructions": "",
+            "key": "field_628f6f38cabc2",
+            "label": "Learner Engagement Hours",
+            "name": "learner_engagement_hours",
+            "type": "number",
+            "instructions": "Indicate hours of engagement expected over the duration of the course.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_5ed62f622fe00",
-                    "label": "Course Outline Text",
-                    "name": "course_outline",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
-                },
-                {
-                    "key": "field_5ed62f922fe01",
-                    "label": "Full Course Outline Link",
-                    "name": "full_course_outline_link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                }
-            ]
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
-            "key": "field_5ed62fbc5843f",
-            "label": "Course Design Statement",
-            "name": "course_design_statement",
-            "type": "checkbox",
+            "key": "field_628f6f7dcabc3",
+            "label": "Assessment required",
+            "name": "assessment_required",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "Online": "Online",
-                "Included indigenous perspectives": "Included indigenous perspectives"
+                "Yes": "Yes",
+                "No": "No"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "vertical",
-            "toggle": 0,
             "return_format": "value",
-            "save_custom": 0
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_628f6fa6cabc4",
+            "label": "Prerequisites required",
+            "name": "prerequisites_required",
+            "type": "textarea",
+            "instructions": "Indicate any prerequisites required to participate in this course.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_628f70162d9b9",
+            "label": "****EXTRAS",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_5ef882e14e944",
@@ -372,6 +413,72 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_5fc0f350f31b9",
+            "label": "Course Banner Image",
+            "name": "featured_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "course-image",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_628f70682d9ba",
+            "label": "Competencies",
+            "name": "competencies",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "comp 1": "comp 1",
+                "comp 2": "comp 2",
+                "comp 3": "comp 3"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_628f709abdf2d",
+            "label": "****ADMIN",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_5ef7476b3393d",
@@ -443,5 +550,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652542012
+    "modified": 1654083227
 }
